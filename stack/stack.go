@@ -74,7 +74,19 @@ func stateEntry(s *bufio.Scanner) (*Routine, error) {
 			return nil, err
 		}
 		r.N = n
-		r.State = m[2]
+
+		rs := regexp.MustCompile(`(.+), (\d+) minutes`)
+		t := rs.FindStringSubmatch(m[2])
+		if t == nil {
+			r.State = m[2]
+		} else {
+			r.State = t[1]
+			d, err := strconv.Atoi(t[2])
+			if err != nil {
+				return nil, err
+			}
+			r.Blocked = time.Duration(d) * time.Minute
+		}
 		return stateFunction(r, s)
 	}
 	if s.Err() == nil {
@@ -173,8 +185,13 @@ func (s *Stack) String() string {
 	return z
 }
 
+func (r *Routine) Header() string {
+	z := fmt.Sprintf("goroutine (%v times) %v %v", len(r.Ns), r.States, r.BlockedRange)
+	return z
+}
+
 func (r *Routine) String() string {
-	z := fmt.Sprintf("goroutine %v %v %v\n", r.Ns, r.States, r.BlockedRange)
+	z := fmt.Sprintf("goroutine (%v times) %v %v\n", len(r.Ns), r.States, r.BlockedRange)
 	for _, v := range r.CS {
 		z += v.String()
 	}
