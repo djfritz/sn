@@ -1,0 +1,145 @@
+SIGABRT: abort
+PC=0x19f72bacc m=0 sigcode=0
+
+goroutine 0 gp=0x10127ea20 m=0 mp=0x101280840 [idle]:
+syscall.syscall(0x14000023b38?, 0x100ff969c?, 0x800000?, 0x7ffff800000?)
+	/usr/local/go/src/runtime/sys_darwin.go:27 +0x48 fp=0x14000023b00 sp=0x14000023a70 pc=0x100fb3418
+syscall.read(0x140000680c0?, {0x140001ad000?, 0x14000023bb8?, 0x100faea68?})
+	/usr/local/go/src/syscall/zsyscall_darwin_arm64.go:1245 +0x48 fp=0x14000023b40 sp=0x14000023b00 pc=0x100fe4b38
+syscall.Read(...)
+	/usr/local/go/src/syscall/syscall_unix.go:183
+internal/poll.ignoringEINTRIO(...)
+	/usr/local/go/src/internal/poll/fd_unix.go:745
+internal/poll.(*FD).Read(0x140000680c0, {0x140001ad000, 0x1000, 0x1000})
+	/usr/local/go/src/internal/poll/fd_unix.go:161 +0x220 fp=0x14000023be0 sp=0x14000023b40 pc=0x100ff97f0
+os.(*File).read(...)
+	/usr/local/go/src/os/file_posix.go:29
+os.(*File).Read(0x14000050018, {0x140001ad000?, 0x14000023cc8?, 0x100fe46d4?})
+	/usr/local/go/src/os/file.go:124 +0x6c fp=0x14000023c20 sp=0x14000023be0 pc=0x100ffc59c
+bufio.(*Scanner).Scan(0x14000023db8)
+	/usr/local/go/src/bufio/scan.go:219 +0x7cc fp=0x14000023d00 sp=0x14000023c20 pc=0x10101bf3c
+github.com/djfritz/chroma/chroma.(*Chroma).Process(0x1400000c2e8, {0x101144b78?, 0x14000050018?}, 0x0)
+	/Users/fritz/go/src/github.com/djfritz/chroma/chroma/chroma.go:131 +0x80 fp=0x14000023e80 sp=0x14000023d00 pc=0x101069d80
+main.cli()
+	/Users/fritz/go/src/github.com/djfritz/chroma/cmd/chromatic/main.go:29 +0x80 fp=0x14000023f10 sp=0x14000023e80 pc=0x10109f150
+main.main()
+	/Users/fritz/go/src/github.com/djfritz/chroma/cmd/chromatic/main.go:18 +0x7c fp=0x14000023f40 sp=0x14000023f10 pc=0x10109f09c
+runtime.main()
+	/usr/local/go/src/runtime/proc.go:283 +0x284 fp=0x14000023fd0 sp=0x14000023f40 pc=0x100f7e034
+runtime.goexit({})
+	/usr/local/go/src/runtime/asm_arm64.s:1223 +0x4 fp=0x14000023fd0 sp=0x14000023fd0 pc=0x100fb7764
+
+goroutine 1 gp=0x140000021c0 m=0 mp=0x101280840 [syscall]:
+syscall.syscall(0x14000023b38?, 0x100ff969c?, 0x800000?, 0x7ffff800000?)
+	/usr/local/go/src/runtime/sys_darwin.go:27 +0x48 fp=0x14000023b00 sp=0x14000023a70 pc=0x100fb3418
+syscall.read(0x140000680c0?, {0x140001ad000?, 0x14000023bb8?, 0x100faea68?})
+	/usr/local/go/src/syscall/zsyscall_darwin_arm64.go:1245 +0x48 fp=0x14000023b40 sp=0x14000023b00 pc=0x100fe4b38
+syscall.Read(...)
+	/usr/local/go/src/syscall/syscall_unix.go:183
+internal/poll.ignoringEINTRIO(...)
+	/usr/local/go/src/internal/poll/fd_unix.go:745
+internal/poll.(*FD).Read(0x140000680c0, {0x140001ad000, 0x1000, 0x1000})
+	/usr/local/go/src/internal/poll/fd_unix.go:161 +0x220 fp=0x14000023be0 sp=0x14000023b40 pc=0x100ff97f0
+os.(*File).read(...)
+	/usr/local/go/src/os/file_posix.go:29
+os.(*File).Read(0x14000050018, {0x140001ad000?, 0x14000023cc8?, 0x100fe46d4?})
+	/usr/local/go/src/os/file.go:124 +0x6c fp=0x14000023c20 sp=0x14000023be0 pc=0x100ffc59c
+bufio.(*Scanner).Scan(0x14000023db8)
+	/usr/local/go/src/bufio/scan.go:219 +0x7cc fp=0x14000023d00 sp=0x14000023c20 pc=0x10101bf3c
+github.com/djfritz/chroma/chroma.(*Chroma).Process(0x1400000c2e8, {0x101144b78?, 0x14000050018?}, 0x0)
+	/Users/fritz/go/src/github.com/djfritz/chroma/chroma/chroma.go:131 +0x80 fp=0x14000023e80 sp=0x14000023d00 pc=0x101069d80
+main.cli()
+	/Users/fritz/go/src/github.com/djfritz/chroma/cmd/chromatic/main.go:29 +0x80 fp=0x14000023f10 sp=0x14000023e80 pc=0x10109f150
+main.main()
+	/Users/fritz/go/src/github.com/djfritz/chroma/cmd/chromatic/main.go:18 +0x7c fp=0x14000023f40 sp=0x14000023f10 pc=0x10109f09c
+runtime.main()
+	/usr/local/go/src/runtime/proc.go:283 +0x284 fp=0x14000023fd0 sp=0x14000023f40 pc=0x100f7e034
+runtime.goexit({})
+	/usr/local/go/src/runtime/asm_arm64.s:1223 +0x4 fp=0x14000023fd0 sp=0x14000023fd0 pc=0x100fb7764
+
+goroutine 2 gp=0x14000002700 m=nil [force gc (idle)]:
+runtime.gopark(0x0?, 0x0?, 0x0?, 0x0?, 0x0?)
+	/usr/local/go/src/runtime/proc.go:435 +0xc8 fp=0x1400004cf90 sp=0x1400004cf70 pc=0x100fb0648
+runtime.goparkunlock(...)
+	/usr/local/go/src/runtime/proc.go:441
+runtime.forcegchelper()
+	/usr/local/go/src/runtime/proc.go:348 +0xb8 fp=0x1400004cfd0 sp=0x1400004cf90 pc=0x100f7e388
+runtime.goexit({})
+	/usr/local/go/src/runtime/asm_arm64.s:1223 +0x4 fp=0x1400004cfd0 sp=0x1400004cfd0 pc=0x100fb7764
+created by runtime.init.7 in goroutine 1
+	/usr/local/go/src/runtime/proc.go:336 +0x24
+
+goroutine 3 gp=0x14000002c40 m=nil [GC sweep wait]:
+runtime.gopark(0x0?, 0x0?, 0x0?, 0x0?, 0x0?)
+	/usr/local/go/src/runtime/proc.go:435 +0xc8 fp=0x1400004d760 sp=0x1400004d740 pc=0x100fb0648
+runtime.goparkunlock(...)
+	/usr/local/go/src/runtime/proc.go:441
+runtime.bgsweep(0x14000064000)
+	/usr/local/go/src/runtime/mgcsweep.go:276 +0xa0 fp=0x1400004d7b0 sp=0x1400004d760 pc=0x100f6a4e0
+runtime.gcenable.gowrap1()
+	/usr/local/go/src/runtime/mgc.go:204 +0x28 fp=0x1400004d7d0 sp=0x1400004d7b0 pc=0x100f5e3d8
+runtime.goexit({})
+	/usr/local/go/src/runtime/asm_arm64.s:1223 +0x4 fp=0x1400004d7d0 sp=0x1400004d7d0 pc=0x100fb7764
+created by runtime.gcenable in goroutine 1
+	/usr/local/go/src/runtime/mgc.go:204 +0x6c
+
+goroutine 4 gp=0x14000002e00 m=nil [GC scavenge wait]:
+runtime.gopark(0x14000064000?, 0x1010eb9e0?, 0x1?, 0x0?, 0x14000002e00?)
+	/usr/local/go/src/runtime/proc.go:435 +0xc8 fp=0x1400004df60 sp=0x1400004df40 pc=0x100fb0648
+runtime.goparkunlock(...)
+	/usr/local/go/src/runtime/proc.go:441
+runtime.(*scavengerState).park(0x10127e720)
+	/usr/local/go/src/runtime/mgcscavenge.go:425 +0x5c fp=0x1400004df90 sp=0x1400004df60 pc=0x100f67fec
+runtime.bgscavenge(0x14000064000)
+	/usr/local/go/src/runtime/mgcscavenge.go:653 +0x44 fp=0x1400004dfb0 sp=0x1400004df90 pc=0x100f68524
+runtime.gcenable.gowrap2()
+	/usr/local/go/src/runtime/mgc.go:205 +0x28 fp=0x1400004dfd0 sp=0x1400004dfb0 pc=0x100f5e378
+runtime.goexit({})
+	/usr/local/go/src/runtime/asm_arm64.s:1223 +0x4 fp=0x1400004dfd0 sp=0x1400004dfd0 pc=0x100fb7764
+created by runtime.gcenable in goroutine 1
+	/usr/local/go/src/runtime/mgc.go:205 +0xac
+
+goroutine 5 gp=0x14000003340 m=nil [finalizer wait]:
+runtime.gopark(0x1400004c5c8?, 0x100f5a2e4?, 0x1?, 0x6a?, 0x100f7e2b4?)
+	/usr/local/go/src/runtime/proc.go:435 +0xc8 fp=0x1400004c590 sp=0x1400004c570 pc=0x100fb0648
+runtime.runfinq()
+	/usr/local/go/src/runtime/mfinal.go:196 +0x108 fp=0x1400004c7d0 sp=0x1400004c590 pc=0x100f5d3d8
+runtime.goexit({})
+	/usr/local/go/src/runtime/asm_arm64.s:1223 +0x4 fp=0x1400004c7d0 sp=0x1400004c7d0 pc=0x100fb7764
+created by runtime.createfing in goroutine 1
+	/usr/local/go/src/runtime/mfinal.go:166 +0x80
+
+r0      0x0
+r1      0x140001ad000
+r2      0x1000
+r3      0x10127ea20
+r4      0x5d0
+r5      0x14000020000
+r6      0x1
+r7      0x1
+r8      0x101280840
+r9      0x14000023a88
+r10     0x2
+r11     0x2
+r12     0x100fe5c20
+r13     0x16eebb610
+r14     0x14000050d90
+r15     0x0
+r16     0x3
+r17     0x19f72bac8
+r18     0x0
+r19     0x14000023498
+r20     0x14000023e28
+r21     0x14000022600
+r22     0x0
+r23     0x16eebb778
+r24     0x19f3e6000
+r25     0x0
+r26     0x14000023d68
+r27     0x810
+r28     0x10127ea20
+r29     0x16eebb5f8
+lr      0x100fb8d2c
+sp      0x16eebb5f0
+pc      0x19f72bacc
+fault   0x19f72bacc

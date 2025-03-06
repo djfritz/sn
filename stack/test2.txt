@@ -1,0 +1,1240 @@
+Memory Ceiling	3.60 GB
+validating storage sets... Shardset at /opt/gravwell/storage/default is corrupt(Store file metadata is corrupt), Attempting to repair...
+Repaired shardset at /opt/gravwell/storage/default
+done 6.017625ms
+done with replication 6.300709ms
+done with indexmanager 27.513209ms
+done with resourcemanager 31.482167ms
+replication connected 31.895459ms
+done with ingestServer 36.538292ms
+done with searchServer 36.879959ms
+Backend running 37.273917ms
+
+
+SIGABRT: abort
+PC=0x47b501 m=0 sigcode=0
+
+goroutine 0 gp=0x2960440 m=0 mp=0x2962aa0 [idle]:
+runtime.futex(0x2962be0, 0x80, 0x0, 0x0, 0x0, 0x0)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/sys_linux_amd64.s:557 +0x21 fp=0x7ffffffff8b0 sp=0x7ffffffff8a8 pc=0x47b501
+runtime.futexsleep(0x7ffffffff928?, 0x40f410?, 0x100000000?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/os_linux.go:69 +0x30 fp=0x7ffffffff900 sp=0x7ffffffff8b0 pc=0x435b50
+runtime.notesleep(0x2962be0)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/lock_futex.go:170 +0x87 fp=0x7ffffffff938 sp=0x7ffffffff900 pc=0x40f5a7
+runtime.mPark(...)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:1866
+runtime.stopm()
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:2886 +0x8c fp=0x7ffffffff968 sp=0x7ffffffff938 pc=0x4410ac
+runtime.findRunnable()
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:3623 +0xd5c fp=0x7ffffffffae0 sp=0x7ffffffff968 pc=0x442b1c
+runtime.schedule()
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:3996 +0xb1 fp=0x7ffffffffb18 sp=0x7ffffffffae0 pc=0x443bf1
+runtime.park_m(0xc000104e00)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:4103 +0x1eb fp=0x7ffffffffb70 sp=0x7ffffffffb18 pc=0x44400b
+runtime.mcall()
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/asm_amd64.s:459 +0x4e fp=0x7ffffffffb88 sp=0x7ffffffffb70 pc=0x47784e
+
+goroutine 1 gp=0xc0000061c0 m=nil [chan receive, 2 minutes]:
+runtime.gopark(0x2947c00?, 0x7fffb8a68508?, 0x10?, 0x0?, 0xc003683d48?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:424 +0xce fp=0xc00401dd08 sp=0xc00401dce8 pc=0x47112e
+runtime.chanrecv(0xc0030fc0e0, 0xc003685bf0, 0x1)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/chan.go:639 +0x41c fp=0xc00401dd80 sp=0xc00401dd08 pc=0x409c3c
+runtime.chanrecv1(0x1b3cf80?, 0xc000202010?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/chan.go:489 +0x12 fp=0xc00401dda8 sp=0xc00401dd80 pc=0x4097f2
+main.main()
+	/Users/fritz/go/src/backend/backend/main.go:818 +0x6e55 fp=0xc00401ff50 sp=0xc00401dda8 pc=0x14da5d5
+runtime.main()
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:272 +0x28b fp=0xc00401ffe0 sp=0xc00401ff50 pc=0x43c42b
+runtime.goexit({})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/asm_amd64.s:1700 +0x1 fp=0xc00401ffe8 sp=0xc00401ffe0 pc=0x479701
+
+goroutine 2 gp=0xc000006700 m=nil [force gc (idle), 2 minutes]:
+runtime.gopark(0x102b96fa6afc3?, 0x0?, 0x0?, 0x0?, 0x0?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:424 +0xce fp=0xc00007afa8 sp=0xc00007af88 pc=0x47112e
+runtime.goparkunlock(...)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:430
+runtime.forcegchelper()
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:337 +0xb3 fp=0xc00007afe0 sp=0xc00007afa8 pc=0x43c773
+runtime.goexit({})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/asm_amd64.s:1700 +0x1 fp=0xc00007afe8 sp=0xc00007afe0 pc=0x479701
+created by runtime.init.7 in goroutine 1
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:325 +0x1a
+
+goroutine 3 gp=0xc000006c40 m=nil [GC sweep wait]:
+runtime.gopark(0x1?, 0x0?, 0x0?, 0x0?, 0x0?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:424 +0xce fp=0xc00007b780 sp=0xc00007b760 pc=0x47112e
+runtime.goparkunlock(...)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:430
+runtime.bgsweep(0xc00009c000)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/mgcsweep.go:317 +0xdf fp=0xc00007b7c8 sp=0xc00007b780 pc=0x425ebf
+runtime.gcenable.gowrap1()
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/mgc.go:204 +0x25 fp=0xc00007b7e0 sp=0xc00007b7c8 pc=0x41a4a5
+runtime.goexit({})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/asm_amd64.s:1700 +0x1 fp=0xc00007b7e8 sp=0xc00007b7e0 pc=0x479701
+created by runtime.gcenable in goroutine 1
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/mgc.go:204 +0x66
+
+goroutine 4 gp=0xc000006e00 m=nil [GC scavenge wait]:
+runtime.gopark(0x10000?, 0x1b31d30?, 0x0?, 0x0?, 0x0?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:424 +0xce fp=0xc00007bf78 sp=0xc00007bf58 pc=0x47112e
+runtime.goparkunlock(...)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:430
+runtime.(*scavengerState).park(0x295fc40)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/mgcscavenge.go:425 +0x49 fp=0xc00007bfa8 sp=0xc00007bf78 pc=0x423889
+runtime.bgscavenge(0xc00009c000)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/mgcscavenge.go:658 +0x59 fp=0xc00007bfc8 sp=0xc00007bfa8 pc=0x423e19
+runtime.gcenable.gowrap2()
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/mgc.go:205 +0x25 fp=0xc00007bfe0 sp=0xc00007bfc8 pc=0x41a445
+runtime.goexit({})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/asm_amd64.s:1700 +0x1 fp=0xc00007bfe8 sp=0xc00007bfe0 pc=0x479701
+created by runtime.gcenable in goroutine 1
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/mgc.go:205 +0xa5
+
+goroutine 17 gp=0xc000204000 m=nil [finalizer wait, 2 minutes]:
+runtime.gopark(0x2eb8980?, 0x188e108?, 0x0?, 0xc2?, 0x2000000020?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:424 +0xce fp=0xc000076620 sp=0xc000076600 pc=0x47112e
+runtime.runfinq()
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/mfinal.go:193 +0x107 fp=0xc0000767e0 sp=0xc000076620 pc=0x419527
+runtime.goexit({})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/asm_amd64.s:1700 +0x1 fp=0xc0000767e8 sp=0xc0000767e0 pc=0x479701
+created by runtime.createfing in goroutine 1
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/mfinal.go:163 +0x3d
+
+goroutine 33 gp=0xc000007180 m=nil [chan receive]:
+runtime.gopark(0xc00007c760?, 0x63c0c5?, 0x40?, 0x34?, 0x1b65ea0?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:424 +0xce fp=0xc00007c718 sp=0xc00007c6f8 pc=0x47112e
+runtime.chanrecv(0xc0001c4150, 0x0, 0x1)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/chan.go:639 +0x41c fp=0xc00007c790 sp=0xc00007c718 pc=0x409c3c
+runtime.chanrecv1(0xc00007c7d0?, 0x789b84?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/chan.go:489 +0x12 fp=0xc00007c7b8 sp=0xc00007c790 pc=0x4097f2
+runtime.unique_runtime_registerUniqueMapCleanup.func1(...)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/mgc.go:1781
+runtime.unique_runtime_registerUniqueMapCleanup.gowrap1()
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/mgc.go:1784 +0x2f fp=0xc00007c7e0 sp=0xc00007c7b8 pc=0x41d4cf
+runtime.goexit({})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/asm_amd64.s:1700 +0x1 fp=0xc00007c7e8 sp=0xc00007c7e0 pc=0x479701
+created by unique.runtime_registerUniqueMapCleanup in goroutine 1
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/mgc.go:1779 +0x96
+
+goroutine 18 gp=0xc0002041c0 m=nil [GC worker (idle), 2 minutes]:
+runtime.gopark(0x0?, 0x0?, 0x0?, 0x0?, 0x0?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:424 +0xce fp=0xc000076f38 sp=0xc000076f18 pc=0x47112e
+runtime.gcBgMarkWorker(0xc00064e070)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/mgc.go:1412 +0xe9 fp=0xc000076fc8 sp=0xc000076f38 pc=0x41c7e9
+runtime.gcBgMarkStartWorkers.gowrap1()
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/mgc.go:1328 +0x25 fp=0xc000076fe0 sp=0xc000076fc8 pc=0x41c6c5
+runtime.goexit({})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/asm_amd64.s:1700 +0x1 fp=0xc000076fe8 sp=0xc000076fe0 pc=0x479701
+created by runtime.gcBgMarkStartWorkers in goroutine 1
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/mgc.go:1328 +0x105
+
+goroutine 6 gp=0xc0000076c0 m=nil [GC worker (idle), 2 minutes]:
+runtime.gopark(0x2ebc420?, 0x1?, 0x7c?, 0x78?, 0x0?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:424 +0xce fp=0xc00007cf38 sp=0xc00007cf18 pc=0x47112e
+runtime.gcBgMarkWorker(0xc00064e070)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/mgc.go:1412 +0xe9 fp=0xc00007cfc8 sp=0xc00007cf38 pc=0x41c7e9
+runtime.gcBgMarkStartWorkers.gowrap1()
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/mgc.go:1328 +0x25 fp=0xc00007cfe0 sp=0xc00007cfc8 pc=0x41c6c5
+runtime.goexit({})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/asm_amd64.s:1700 +0x1 fp=0xc00007cfe8 sp=0xc00007cfe0 pc=0x479701
+created by runtime.gcBgMarkStartWorkers in goroutine 1
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/mgc.go:1328 +0x105
+
+goroutine 7 gp=0xc000007880 m=nil [GC worker (idle), 2 minutes]:
+runtime.gopark(0x1029d7a49c442?, 0x3?, 0x2a?, 0x52?, 0x0?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:424 +0xce fp=0xc00007d738 sp=0xc00007d718 pc=0x47112e
+runtime.gcBgMarkWorker(0xc00064e070)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/mgc.go:1412 +0xe9 fp=0xc00007d7c8 sp=0xc00007d738 pc=0x41c7e9
+runtime.gcBgMarkStartWorkers.gowrap1()
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/mgc.go:1328 +0x25 fp=0xc00007d7e0 sp=0xc00007d7c8 pc=0x41c6c5
+runtime.goexit({})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/asm_amd64.s:1700 +0x1 fp=0xc00007d7e8 sp=0xc00007d7e0 pc=0x479701
+created by runtime.gcBgMarkStartWorkers in goroutine 1
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/mgc.go:1328 +0x105
+
+goroutine 8 gp=0xc000007a40 m=nil [GC worker (idle), 2 minutes]:
+runtime.gopark(0x1029d7cecc316?, 0x3?, 0x61?, 0xad?, 0x0?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:424 +0xce fp=0xc00007df38 sp=0xc00007df18 pc=0x47112e
+runtime.gcBgMarkWorker(0xc00064e070)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/mgc.go:1412 +0xe9 fp=0xc00007dfc8 sp=0xc00007df38 pc=0x41c7e9
+runtime.gcBgMarkStartWorkers.gowrap1()
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/mgc.go:1328 +0x25 fp=0xc00007dfe0 sp=0xc00007dfc8 pc=0x41c6c5
+runtime.goexit({})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/asm_amd64.s:1700 +0x1 fp=0xc00007dfe8 sp=0xc00007dfe0 pc=0x479701
+created by runtime.gcBgMarkStartWorkers in goroutine 1
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/mgc.go:1328 +0x105
+
+goroutine 9 gp=0xc000007c00 m=nil [GC worker (idle), 2 minutes]:
+runtime.gopark(0x1029d7a487358?, 0x0?, 0x0?, 0x0?, 0x0?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:424 +0xce fp=0xc0004ba738 sp=0xc0004ba718 pc=0x47112e
+runtime.gcBgMarkWorker(0xc00064e070)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/mgc.go:1412 +0xe9 fp=0xc0004ba7c8 sp=0xc0004ba738 pc=0x41c7e9
+runtime.gcBgMarkStartWorkers.gowrap1()
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/mgc.go:1328 +0x25 fp=0xc0004ba7e0 sp=0xc0004ba7c8 pc=0x41c6c5
+runtime.goexit({})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/asm_amd64.s:1700 +0x1 fp=0xc0004ba7e8 sp=0xc0004ba7e0 pc=0x479701
+created by runtime.gcBgMarkStartWorkers in goroutine 1
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/mgc.go:1328 +0x105
+
+goroutine 10 gp=0xc000007dc0 m=nil [GC worker (idle), 2 minutes]:
+runtime.gopark(0x102b96ff1da47?, 0x1?, 0xd2?, 0xe5?, 0x0?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:424 +0xce fp=0xc0004baf38 sp=0xc0004baf18 pc=0x47112e
+runtime.gcBgMarkWorker(0xc00064e070)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/mgc.go:1412 +0xe9 fp=0xc0004bafc8 sp=0xc0004baf38 pc=0x41c7e9
+runtime.gcBgMarkStartWorkers.gowrap1()
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/mgc.go:1328 +0x25 fp=0xc0004bafe0 sp=0xc0004bafc8 pc=0x41c6c5
+runtime.goexit({})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/asm_amd64.s:1700 +0x1 fp=0xc0004bafe8 sp=0xc0004bafe0 pc=0x479701
+created by runtime.gcBgMarkStartWorkers in goroutine 1
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/mgc.go:1328 +0x105
+
+goroutine 11 gp=0xc0004be000 m=nil [GC worker (idle), 2 minutes]:
+runtime.gopark(0x2ebc420?, 0x3?, 0xd?, 0x5f?, 0x0?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:424 +0xce fp=0xc0004bb738 sp=0xc0004bb718 pc=0x47112e
+runtime.gcBgMarkWorker(0xc00064e070)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/mgc.go:1412 +0xe9 fp=0xc0004bb7c8 sp=0xc0004bb738 pc=0x41c7e9
+runtime.gcBgMarkStartWorkers.gowrap1()
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/mgc.go:1328 +0x25 fp=0xc0004bb7e0 sp=0xc0004bb7c8 pc=0x41c6c5
+runtime.goexit({})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/asm_amd64.s:1700 +0x1 fp=0xc0004bb7e8 sp=0xc0004bb7e0 pc=0x479701
+created by runtime.gcBgMarkStartWorkers in goroutine 1
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/mgc.go:1328 +0x105
+
+goroutine 12 gp=0xc0004be1c0 m=nil [GC worker (idle), 2 minutes]:
+runtime.gopark(0x1029d7a4a73b7?, 0x0?, 0x0?, 0x0?, 0x0?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:424 +0xce fp=0xc0004bbf38 sp=0xc0004bbf18 pc=0x47112e
+runtime.gcBgMarkWorker(0xc00064e070)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/mgc.go:1412 +0xe9 fp=0xc0004bbfc8 sp=0xc0004bbf38 pc=0x41c7e9
+runtime.gcBgMarkStartWorkers.gowrap1()
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/mgc.go:1328 +0x25 fp=0xc0004bbfe0 sp=0xc0004bbfc8 pc=0x41c6c5
+runtime.goexit({})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/asm_amd64.s:1700 +0x1 fp=0xc0004bbfe8 sp=0xc0004bbfe0 pc=0x479701
+created by runtime.gcBgMarkStartWorkers in goroutine 1
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/mgc.go:1328 +0x105
+
+goroutine 13 gp=0xc0004be380 m=nil [GC worker (idle), 2 minutes]:
+runtime.gopark(0x1029d7a2bbf33?, 0x0?, 0x0?, 0x0?, 0x0?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:424 +0xce fp=0xc0004bc738 sp=0xc0004bc718 pc=0x47112e
+runtime.gcBgMarkWorker(0xc00064e070)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/mgc.go:1412 +0xe9 fp=0xc0004bc7c8 sp=0xc0004bc738 pc=0x41c7e9
+runtime.gcBgMarkStartWorkers.gowrap1()
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/mgc.go:1328 +0x25 fp=0xc0004bc7e0 sp=0xc0004bc7c8 pc=0x41c6c5
+runtime.goexit({})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/asm_amd64.s:1700 +0x1 fp=0xc0004bc7e8 sp=0xc0004bc7e0 pc=0x479701
+created by runtime.gcBgMarkStartWorkers in goroutine 1
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/mgc.go:1328 +0x105
+
+goroutine 14 gp=0xc0004be540 m=nil [GC worker (idle)]:
+runtime.gopark(0x102b96ff234c5?, 0x1?, 0xb1?, 0x40?, 0x0?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:424 +0xce fp=0xc0004bcf38 sp=0xc0004bcf18 pc=0x47112e
+runtime.gcBgMarkWorker(0xc00064e070)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/mgc.go:1412 +0xe9 fp=0xc0004bcfc8 sp=0xc0004bcf38 pc=0x41c7e9
+runtime.gcBgMarkStartWorkers.gowrap1()
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/mgc.go:1328 +0x25 fp=0xc0004bcfe0 sp=0xc0004bcfc8 pc=0x41c6c5
+runtime.goexit({})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/asm_amd64.s:1700 +0x1 fp=0xc0004bcfe8 sp=0xc0004bcfe0 pc=0x479701
+created by runtime.gcBgMarkStartWorkers in goroutine 1
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/mgc.go:1328 +0x105
+
+goroutine 15 gp=0xc0004be700 m=nil [GC worker (idle), 2 minutes]:
+runtime.gopark(0x1029d7ceceeb5?, 0x1?, 0x36?, 0xcd?, 0x0?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:424 +0xce fp=0xc0004bd738 sp=0xc0004bd718 pc=0x47112e
+runtime.gcBgMarkWorker(0xc00064e070)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/mgc.go:1412 +0xe9 fp=0xc0004bd7c8 sp=0xc0004bd738 pc=0x41c7e9
+runtime.gcBgMarkStartWorkers.gowrap1()
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/mgc.go:1328 +0x25 fp=0xc0004bd7e0 sp=0xc0004bd7c8 pc=0x41c6c5
+runtime.goexit({})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/asm_amd64.s:1700 +0x1 fp=0xc0004bd7e8 sp=0xc0004bd7e0 pc=0x479701
+created by runtime.gcBgMarkStartWorkers in goroutine 1
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/mgc.go:1328 +0x105
+
+goroutine 16 gp=0xc0004be8c0 m=nil [GC worker (idle)]:
+runtime.gopark(0x102b96ff0c8ad?, 0x1?, 0xc?, 0x4c?, 0x0?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:424 +0xce fp=0xc0004bdf38 sp=0xc0004bdf18 pc=0x47112e
+runtime.gcBgMarkWorker(0xc00064e070)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/mgc.go:1412 +0xe9 fp=0xc0004bdfc8 sp=0xc0004bdf38 pc=0x41c7e9
+runtime.gcBgMarkStartWorkers.gowrap1()
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/mgc.go:1328 +0x25 fp=0xc0004bdfe0 sp=0xc0004bdfc8 pc=0x41c6c5
+runtime.goexit({})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/asm_amd64.s:1700 +0x1 fp=0xc0004bdfe8 sp=0xc0004bdfe0 pc=0x479701
+created by runtime.gcBgMarkStartWorkers in goroutine 1
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/mgc.go:1328 +0x105
+
+goroutine 49 gp=0xc0004bea80 m=nil [GC worker (idle), 2 minutes]:
+runtime.gopark(0x1029d7a457fa6?, 0x0?, 0x0?, 0x0?, 0x0?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:424 +0xce fp=0xc0004b6738 sp=0xc0004b6718 pc=0x47112e
+runtime.gcBgMarkWorker(0xc00064e070)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/mgc.go:1412 +0xe9 fp=0xc0004b67c8 sp=0xc0004b6738 pc=0x41c7e9
+runtime.gcBgMarkStartWorkers.gowrap1()
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/mgc.go:1328 +0x25 fp=0xc0004b67e0 sp=0xc0004b67c8 pc=0x41c6c5
+runtime.goexit({})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/asm_amd64.s:1700 +0x1 fp=0xc0004b67e8 sp=0xc0004b67e0 pc=0x479701
+created by runtime.gcBgMarkStartWorkers in goroutine 1
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/mgc.go:1328 +0x105
+
+goroutine 50 gp=0xc0004bec40 m=nil [GC worker (idle), 2 minutes]:
+runtime.gopark(0x1029d7cecf5b4?, 0x1?, 0x74?, 0x26?, 0x0?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:424 +0xce fp=0xc0004b6f38 sp=0xc0004b6f18 pc=0x47112e
+runtime.gcBgMarkWorker(0xc00064e070)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/mgc.go:1412 +0xe9 fp=0xc0004b6fc8 sp=0xc0004b6f38 pc=0x41c7e9
+runtime.gcBgMarkStartWorkers.gowrap1()
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/mgc.go:1328 +0x25 fp=0xc0004b6fe0 sp=0xc0004b6fc8 pc=0x41c6c5
+runtime.goexit({})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/asm_amd64.s:1700 +0x1 fp=0xc0004b6fe8 sp=0xc0004b6fe0 pc=0x479701
+created by runtime.gcBgMarkStartWorkers in goroutine 1
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/mgc.go:1328 +0x105
+
+goroutine 51 gp=0xc000a84380 m=nil [chan receive, 2 minutes]:
+runtime.gopark(0x575545?, 0x1619e20?, 0x1?, 0xc0?, 0xc000079748?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:424 +0xce fp=0xc0000796b8 sp=0xc000079698 pc=0x47112e
+runtime.chanrecv(0xc000e08000, 0xc0000797a0, 0x1)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/chan.go:639 +0x41c fp=0xc000079730 sp=0xc0000796b8 pc=0x409c3c
+runtime.chanrecv2(0xc000e08000?, 0xc000079790?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/chan.go:494 +0x12 fp=0xc000079758 sp=0xc000079730 pc=0x409812
+github.com/gravwell/gravwell/v3/debug.HandleDebugSignals({0x179a9f8, 0x7})
+	/Users/fritz/go/pkg/mod/github.com/gravwell/gravwell/v3@v3.8.58/debug/debug.go:27 +0x71 fp=0xc0000797c0 sp=0xc000079758 pc=0x14d2591
+main.main.gowrap1()
+	/Users/fritz/go/src/backend/backend/main.go:164 +0x28 fp=0xc0000797e0 sp=0xc0000797c0 pc=0x14dda48
+runtime.goexit({})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/asm_amd64.s:1700 +0x1 fp=0xc0000797e8 sp=0xc0000797e0 pc=0x479701
+created by main.main in goroutine 1
+	/Users/fritz/go/src/backend/backend/main.go:164 +0x31
+
+goroutine 34 gp=0xc000104380 m=nil [select, 2 minutes, locked to thread]:
+runtime.gopark(0xc000e16fa8?, 0x2?, 0x80?, 0x43?, 0xc000e16f94?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:424 +0xce fp=0xc000e16e30 sp=0xc000e16e10 pc=0x47112e
+runtime.selectgo(0xc000e16fa8, 0xc000e16f90, 0x0?, 0x0, 0x0?, 0x1)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/select.go:335 +0x7a5 fp=0xc000e16f58 sp=0xc000e16e30 pc=0x44e505
+runtime.ensureSigM.func1()
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/signal_unix.go:1077 +0x19f fp=0xc000e16fe0 sp=0xc000e16f58 pc=0x468a3f
+runtime.goexit({})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/asm_amd64.s:1700 +0x1 fp=0xc000e16fe8 sp=0xc000e16fe0 pc=0x479701
+created by runtime.ensureSigM in goroutine 51
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/signal_unix.go:1060 +0xc8
+
+goroutine 65 gp=0xc000184540 m=6 mp=0xc000690008 [syscall, 2 minutes]:
+runtime.notetsleepg(0x2eba900, 0xffffffffffffffff)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/lock_futex.go:246 +0x29 fp=0xc000e12fa0 sp=0xc000e12f78 pc=0x40f889
+os/signal.signal_recv()
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/sigqueue.go:152 +0x29 fp=0xc000e12fc0 sp=0xc000e12fa0 pc=0x4734e9
+os/signal.loop()
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/os/signal/signal_unix.go:23 +0x13 fp=0xc000e12fe0 sp=0xc000e12fc0 pc=0x575cd3
+runtime.goexit({})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/asm_amd64.s:1700 +0x1 fp=0xc000e12fe8 sp=0xc000e12fe0 pc=0x479701
+created by os/signal.Notify.func1.1 in goroutine 51
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/os/signal/signal.go:151 +0x1f
+
+goroutine 19 gp=0xc0004bee00 m=nil [chan receive, 2 minutes]:
+runtime.gopark(0x295fac0?, 0xc000a18020?, 0x4?, 0x0?, 0x179a9f8?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:424 +0xce fp=0xc000018da8 sp=0xc000018d88 pc=0x47112e
+runtime.chanrecv(0xc00096b8f0, 0xc000018f58, 0x1)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/chan.go:639 +0x41c fp=0xc000018e20 sp=0xc000018da8 pc=0x409c3c
+runtime.chanrecv2(0xc0009283c0?, 0xc1ea5a6744555019?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/chan.go:494 +0x12 fp=0xc000018e48 sp=0xc000018e20 pc=0x409812
+gravwell/pkg/logging.(*fileLogger).routine(0xc0009283c0)
+	/Users/fritz/go/src/backend/pkg/logging/filelogger.go:339 +0x117 fp=0xc000018fc8 sp=0xc000018e48 pc=0x978e57
+gravwell/pkg/logging.(*fileLogger).start.gowrap1()
+	/Users/fritz/go/src/backend/pkg/logging/filelogger.go:408 +0x25 fp=0xc000018fe0 sp=0xc000018fc8 pc=0x979365
+runtime.goexit({})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/asm_amd64.s:1700 +0x1 fp=0xc000018fe8 sp=0xc000018fe0 pc=0x479701
+created by gravwell/pkg/logging.(*fileLogger).start in goroutine 1
+	/Users/fritz/go/src/backend/pkg/logging/filelogger.go:408 +0x59
+
+goroutine 66 gp=0xc000a84540 m=nil [sleep]:
+runtime.gopark(0x102bffd1cd072?, 0x8000102?, 0x0?, 0x0?, 0x22875ceafe?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:424 +0xce fp=0xc000019f38 sp=0xc000019f18 pc=0x47112e
+time.Sleep(0x771beb27)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/time.go:300 +0xf2 fp=0xc000019f70 sp=0xc000019f38 pc=0x4757f2
+gravwell/pkg/host.ratioLoop()
+	/Users/fritz/go/src/backend/pkg/host/host.go:631 +0x15c fp=0xc000019fe0 sp=0xc000019f70 pc=0x8d77bc
+runtime.goexit({})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/asm_amd64.s:1700 +0x1 fp=0xc000019fe8 sp=0xc000019fe0 pc=0x479701
+created by gravwell/pkg/host.Start in goroutine 1
+	/Users/fritz/go/src/backend/pkg/host/host.go:139 +0x34f
+
+goroutine 35 gp=0xc0001048c0 m=nil [select]:
+runtime.gopark(0xc0036b6e00?, 0x3?, 0xe0?, 0x40?, 0xc0036b6cd2?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:424 +0xce fp=0xc0036b6b58 sp=0xc0036b6b38 pc=0x47112e
+runtime.selectgo(0xc0036b6e00, 0xc0036b6ccc, 0x1b540e0?, 0x0, 0x1db?, 0x1)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/select.go:335 +0x7a5 fp=0xc0036b6c80 sp=0xc0036b6b58 pc=0x44e505
+gravwell/pkg/indexer/sharder/file.(*FileIndex).routine(0xc0007a8d80, 0xc0030d6b80, 0xc0030fc620)
+	/Users/fritz/go/src/backend/pkg/indexer/sharder/file/file_processing.go:197 +0x4d2 fp=0xc0036b6fb8 sp=0xc0036b6c80 pc=0xc56f52
+gravwell/pkg/indexer/sharder/file.(*FileIndex).Start.gowrap2()
+	/Users/fritz/go/src/backend/pkg/indexer/sharder/file/file.go:868 +0x28 fp=0xc0036b6fe0 sp=0xc0036b6fb8 pc=0xc54ae8
+runtime.goexit({})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/asm_amd64.s:1700 +0x1 fp=0xc0036b6fe8 sp=0xc0036b6fe0 pc=0x479701
+created by gravwell/pkg/indexer/sharder/file.(*FileIndex).Start in goroutine 1
+	/Users/fritz/go/src/backend/pkg/indexer/sharder/file/file.go:868 +0x285
+
+goroutine 36 gp=0xc000104a80 m=nil [select]:
+runtime.gopark(0xc00013be30?, 0x3?, 0x20?, 0xf2?, 0xc00013b80a?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:424 +0xce fp=0xc00013b6a0 sp=0xc00013b680 pc=0x47112e
+runtime.selectgo(0xc00013be30, 0xc00013b804, 0xedf5ae9ad?, 0x0, 0x2?, 0x1)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/select.go:335 +0x7a5 fp=0xc00013b7c8 sp=0xc00013b6a0 pc=0x44e505
+gravwell/pkg/indexer/sharder.(*ShardingIndex).routine(0xc000719040, 0xc0030d6b40, 0xc0030d6be0, 0xc0030fc770)
+	/Users/fritz/go/src/backend/pkg/indexer/sharder/sharder.go:580 +0x9ad fp=0xc00013bfb0 sp=0xc00013b7c8 pc=0xc6b74d
+gravwell/pkg/indexer/sharder.(*ShardingIndex).Start.gowrap1()
+	/Users/fritz/go/src/backend/pkg/indexer/sharder/sharder.go:510 +0x2c fp=0xc00013bfe0 sp=0xc00013bfb0 pc=0xc6acec
+runtime.goexit({})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/asm_amd64.s:1700 +0x1 fp=0xc00013bfe8 sp=0xc00013bfe0 pc=0x479701
+created by gravwell/pkg/indexer/sharder.(*ShardingIndex).Start in goroutine 1
+	/Users/fritz/go/src/backend/pkg/indexer/sharder/sharder.go:510 +0x345
+
+goroutine 37 gp=0xc000104c40 m=nil [select]:
+runtime.gopark(0xc000014e30?, 0x3?, 0x40?, 0x4c?, 0xc00001480a?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:424 +0xce fp=0xc0000146a0 sp=0xc000014680 pc=0x47112e
+runtime.selectgo(0xc000014e30, 0xc000014804, 0x0?, 0x0, 0x0?, 0x1)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/select.go:335 +0x7a5 fp=0xc0000147c8 sp=0xc0000146a0 pc=0x44e505
+gravwell/pkg/indexer/sharder.(*ShardingIndex).routine(0xc000719180, 0xc0030d6c00, 0xc0030d6c20, 0xc0030fc9a0)
+	/Users/fritz/go/src/backend/pkg/indexer/sharder/sharder.go:580 +0x9ad fp=0xc000014fb0 sp=0xc0000147c8 pc=0xc6b74d
+gravwell/pkg/indexer/sharder.(*ShardingIndex).Start.gowrap1()
+	/Users/fritz/go/src/backend/pkg/indexer/sharder/sharder.go:510 +0x2c fp=0xc000014fe0 sp=0xc000014fb0 pc=0xc6acec
+runtime.goexit({})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/asm_amd64.s:1700 +0x1 fp=0xc000014fe8 sp=0xc000014fe0 pc=0x479701
+created by gravwell/pkg/indexer/sharder.(*ShardingIndex).Start in goroutine 1
+	/Users/fritz/go/src/backend/pkg/indexer/sharder/sharder.go:510 +0x345
+
+goroutine 38 gp=0xc000104e00 m=nil [select]:
+runtime.gopark(0xc000015ec8?, 0x2?, 0xcf?, 0xb0?, 0xc000015d1c?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:424 +0xce fp=0xc000015bb0 sp=0xc000015b90 pc=0x47112e
+runtime.selectgo(0xc000015ec8, 0xc000015d18, 0xedf5ae9ad?, 0x0, 0x2?, 0x1)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/select.go:335 +0x7a5 fp=0xc000015cd8 sp=0xc000015bb0 pc=0x44e505
+gravwell/pkg/indexer/manager.(*Idx).routine(0xc0000b6408, 0xc0030d6b60, 0xc0030d6b40, 0xc0030d6c00, 0xc0030fcb60)
+	/Users/fritz/go/src/backend/pkg/indexer/manager/index.go:658 +0x2c8 fp=0xc000015fa8 sp=0xc000015cd8 pc=0xca8628
+gravwell/pkg/indexer/manager.(*Idx).Start.gowrap1()
+	/Users/fritz/go/src/backend/pkg/indexer/manager/index.go:507 +0x30 fp=0xc000015fe0 sp=0xc000015fa8 pc=0xca7b90
+runtime.goexit({})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/asm_amd64.s:1700 +0x1 fp=0xc000015fe8 sp=0xc000015fe0 pc=0x479701
+created by gravwell/pkg/indexer/manager.(*Idx).Start in goroutine 1
+	/Users/fritz/go/src/backend/pkg/indexer/manager/index.go:507 +0x485
+
+goroutine 40 gp=0xc000105180 m=nil [select]:
+runtime.gopark(0xc0036a7e30?, 0x3?, 0xb0?, 0xa1?, 0xc0036a780a?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:424 +0xce fp=0xc0036a76a0 sp=0xc0036a7680 pc=0x47112e
+runtime.selectgo(0xc0036a7e30, 0xc0036a7804, 0x0?, 0x0, 0x0?, 0x1)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/select.go:335 +0x7a5 fp=0xc0036a77c8 sp=0xc0036a76a0 pc=0x44e505
+gravwell/pkg/indexer/sharder.(*ShardingIndex).routine(0xc000845cc0, 0xc0030d6c40, 0xc0030d6cc0, 0xc0030fcf50)
+	/Users/fritz/go/src/backend/pkg/indexer/sharder/sharder.go:580 +0x9ad fp=0xc0036a7fb0 sp=0xc0036a77c8 pc=0xc6b74d
+gravwell/pkg/indexer/sharder.(*ShardingIndex).Start.gowrap1()
+	/Users/fritz/go/src/backend/pkg/indexer/sharder/sharder.go:510 +0x2c fp=0xc0036a7fe0 sp=0xc0036a7fb0 pc=0xc6acec
+runtime.goexit({})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/asm_amd64.s:1700 +0x1 fp=0xc0036a7fe8 sp=0xc0036a7fe0 pc=0x479701
+created by gravwell/pkg/indexer/sharder.(*ShardingIndex).Start in goroutine 1
+	/Users/fritz/go/src/backend/pkg/indexer/sharder/sharder.go:510 +0x345
+
+goroutine 41 gp=0xc000105340 m=nil [select]:
+runtime.gopark(0xc003114ec8?, 0x2?, 0x70?, 0x0?, 0xc003114d1c?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:424 +0xce fp=0xc003114bb0 sp=0xc003114b90 pc=0x47112e
+runtime.selectgo(0xc003114ec8, 0xc003114d18, 0x526900?, 0x0, 0xc000e124d0?, 0x1)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/select.go:335 +0x7a5 fp=0xc003114cd8 sp=0xc003114bb0 pc=0x44e505
+gravwell/pkg/indexer/manager.(*Idx).routine(0xc0000b6808, 0xc0030d6c60, 0xc0030d6c40, 0x0, 0xc0030fd110)
+	/Users/fritz/go/src/backend/pkg/indexer/manager/index.go:658 +0x2c8 fp=0xc003114fa8 sp=0xc003114cd8 pc=0xca8628
+gravwell/pkg/indexer/manager.(*Idx).Start.gowrap1()
+	/Users/fritz/go/src/backend/pkg/indexer/manager/index.go:507 +0x30 fp=0xc003114fe0 sp=0xc003114fa8 pc=0xca7b90
+runtime.goexit({})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/asm_amd64.s:1700 +0x1 fp=0xc003114fe8 sp=0xc003114fe0 pc=0x479701
+created by gravwell/pkg/indexer/manager.(*Idx).Start in goroutine 1
+	/Users/fritz/go/src/backend/pkg/indexer/manager/index.go:507 +0x485
+
+goroutine 81 gp=0xc0004befc0 m=nil [select]:
+runtime.gopark(0xc0036abe30?, 0x3?, 0xa0?, 0x30?, 0xc0036ab80a?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:424 +0xce fp=0xc0036ab6a0 sp=0xc0036ab680 pc=0x47112e
+runtime.selectgo(0xc0036abe30, 0xc0036ab804, 0x0?, 0x0, 0x0?, 0x1)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/select.go:335 +0x7a5 fp=0xc0036ab7c8 sp=0xc0036ab6a0 pc=0x44e505
+gravwell/pkg/indexer/sharder.(*ShardingIndex).routine(0xc000938280, 0xc0030d6ce0, 0xc00368e000, 0xc003686000)
+	/Users/fritz/go/src/backend/pkg/indexer/sharder/sharder.go:580 +0x9ad fp=0xc0036abfb0 sp=0xc0036ab7c8 pc=0xc6b74d
+gravwell/pkg/indexer/sharder.(*ShardingIndex).Start.gowrap1()
+	/Users/fritz/go/src/backend/pkg/indexer/sharder/sharder.go:510 +0x2c fp=0xc0036abfe0 sp=0xc0036abfb0 pc=0xc6acec
+runtime.goexit({})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/asm_amd64.s:1700 +0x1 fp=0xc0036abfe8 sp=0xc0036abfe0 pc=0x479701
+created by gravwell/pkg/indexer/sharder.(*ShardingIndex).Start in goroutine 1
+	/Users/fritz/go/src/backend/pkg/indexer/sharder/sharder.go:510 +0x345
+
+goroutine 82 gp=0xc0004bf180 m=nil [select]:
+runtime.gopark(0xc003111e30?, 0x3?, 0x80?, 0xf1?, 0xc00311180a?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:424 +0xce fp=0xc0031116a0 sp=0xc003111680 pc=0x47112e
+runtime.selectgo(0xc003111e30, 0xc003111804, 0x0?, 0x0, 0x0?, 0x1)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/select.go:335 +0x7a5 fp=0xc0031117c8 sp=0xc0031116a0 pc=0x44e505
+gravwell/pkg/indexer/sharder.(*ShardingIndex).routine(0xc0009383c0, 0xc00368e020, 0xc00368e040, 0xc003686230)
+	/Users/fritz/go/src/backend/pkg/indexer/sharder/sharder.go:580 +0x9ad fp=0xc003111fb0 sp=0xc0031117c8 pc=0xc6b74d
+gravwell/pkg/indexer/sharder.(*ShardingIndex).Start.gowrap1()
+	/Users/fritz/go/src/backend/pkg/indexer/sharder/sharder.go:510 +0x2c fp=0xc003111fe0 sp=0xc003111fb0 pc=0xc6acec
+runtime.goexit({})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/asm_amd64.s:1700 +0x1 fp=0xc003111fe8 sp=0xc003111fe0 pc=0x479701
+created by gravwell/pkg/indexer/sharder.(*ShardingIndex).Start in goroutine 1
+	/Users/fritz/go/src/backend/pkg/indexer/sharder/sharder.go:510 +0x345
+
+goroutine 83 gp=0xc0004bf340 m=nil [select]:
+runtime.gopark(0xc003112ec8?, 0x2?, 0x70?, 0x0?, 0xc003112d1c?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:424 +0xce fp=0xc003112bb0 sp=0xc003112b90 pc=0x47112e
+runtime.selectgo(0xc003112ec8, 0xc003112d18, 0x0?, 0x0, 0x0?, 0x1)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/select.go:335 +0x7a5 fp=0xc003112cd8 sp=0xc003112bb0 pc=0x44e505
+gravwell/pkg/indexer/manager.(*Idx).routine(0xc0000b7008, 0xc0030d6d00, 0xc0030d6ce0, 0xc00368e020, 0xc0036863f0)
+	/Users/fritz/go/src/backend/pkg/indexer/manager/index.go:658 +0x2c8 fp=0xc003112fa8 sp=0xc003112cd8 pc=0xca8628
+gravwell/pkg/indexer/manager.(*Idx).Start.gowrap1()
+	/Users/fritz/go/src/backend/pkg/indexer/manager/index.go:507 +0x30 fp=0xc003112fe0 sp=0xc003112fa8 pc=0xca7b90
+runtime.goexit({})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/asm_amd64.s:1700 +0x1 fp=0xc003112fe8 sp=0xc003112fe0 pc=0x479701
+created by gravwell/pkg/indexer/manager.(*Idx).Start in goroutine 1
+	/Users/fritz/go/src/backend/pkg/indexer/manager/index.go:507 +0x485
+
+goroutine 154 gp=0xc0004bf500 m=nil [IO wait]:
+runtime.gopark(0x16fc2e0?, 0x7329fd?, 0x0?, 0x0?, 0xb?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:424 +0xce fp=0xc0000259d8 sp=0xc0000259b8 pc=0x47112e
+runtime.netpollblock(0x495298?, 0x407f66?, 0x0?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/netpoll.go:575 +0xf7 fp=0xc000025a10 sp=0xc0000259d8 pc=0x434df7
+internal/poll.runtime_pollWait(0x7fffb8afb2b0, 0x72)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/netpoll.go:351 +0x85 fp=0xc000025a30 sp=0xc000025a10 pc=0x470425
+internal/poll.(*pollDesc).wait(0xc00072a000?, 0xc003ef4000?, 0x0)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/internal/poll/fd_poll_runtime.go:84 +0x27 fp=0xc000025a58 sp=0xc000025a30 pc=0x516167
+internal/poll.(*pollDesc).waitRead(...)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/internal/poll/fd_poll_runtime.go:89
+internal/poll.(*FD).Read(0xc00072a000, {0xc003ef4000, 0x1000, 0x1000})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/internal/poll/fd_unix.go:165 +0x27a fp=0xc000025af0 sp=0xc000025a58 pc=0x51745a
+net.(*netFD).Read(0xc00072a000, {0xc003ef4000?, 0xc000a7a680?, 0xc00402ea88?})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/net/fd_posix.go:55 +0x25 fp=0xc000025b38 sp=0xc000025af0 pc=0x654425
+net.(*conn).Read(0xc000dae200, {0xc003ef4000?, 0x0?, 0x2e?})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/net/net.go:189 +0x45 fp=0xc000025b80 sp=0xc000025b38 pc=0x6684a5
+net.(*TCPConn).Read(0x0?, {0xc003ef4000?, 0x0?, 0xc00072a020?})
+	<autogenerated>:1 +0x25 fp=0xc000025bb0 sp=0xc000025b80 pc=0x67e845
+bufio.(*Reader).Read(0xc000a7e0c0, {0xc00071a370, 0x1, 0xc000025c48?})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/bufio/bufio.go:241 +0x197 fp=0xc000025be8 sp=0xc000025bb0 pc=0x57b017
+io.ReadAtLeast({0x1b3d7e0, 0xc000a7e0c0}, {0xc00071a370, 0x1, 0x9}, 0x1)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/io/io.go:335 +0x90 fp=0xc000025c30 sp=0xc000025be8 pc=0x4b2290
+io.ReadFull(...)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/io/io.go:354
+encoding/gob.decodeUintReader({0x1b3d7e0, 0xc000a7e0c0}, {0xc00071a370, 0x9, 0x9})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/encoding/gob/decode.go:116 +0x51 fp=0xc000025c88 sp=0xc000025c30 pc=0x71d531
+encoding/gob.(*Decoder).recvMessage(0xc003b8c6c0)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/encoding/gob/decoder.go:84 +0x33 fp=0xc000025cc0 sp=0xc000025c88 pc=0x726db3
+encoding/gob.(*Decoder).decodeTypeSequence(0xc003b8c6c0, 0x0)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/encoding/gob/decoder.go:150 +0x47 fp=0xc000025cf0 sp=0xc000025cc0 pc=0x727127
+encoding/gob.(*Decoder).DecodeValue(0xc003b8c6c0, {0x1558140?, 0xc0030d6300?, 0xc0006d3110?})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/encoding/gob/decoder.go:229 +0x168 fp=0xc000025d70 sp=0xc000025cf0 pc=0x727568
+encoding/gob.(*Decoder).Decode(0xc003b8c6c0, {0x1558140?, 0xc0030d6300?})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/encoding/gob/decoder.go:206 +0x12f fp=0xc000025dc8 sp=0xc000025d70 pc=0x7273af
+gravwell/pkg/search/search_api.(*Netio).Decode(...)
+	/Users/fritz/go/src/backend/pkg/search/search_api/comms.go:350
+gravwell/pkg/search.(*serverRoutine).routine(0xc0036be180)
+	/Users/fritz/go/src/backend/pkg/search/server_routine.go:208 +0x579 fp=0xc000025fc8 sp=0xc000025dc8 pc=0x14c4339
+gravwell/pkg/search.(*serverRoutine).Start.gowrap1()
+	/Users/fritz/go/src/backend/pkg/search/server_routine.go:141 +0x25 fp=0xc000025fe0 sp=0xc000025fc8 pc=0x14c3c85
+runtime.goexit({})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/asm_amd64.s:1700 +0x1 fp=0xc000025fe8 sp=0xc000025fe0 pc=0x479701
+created by gravwell/pkg/search.(*serverRoutine).Start in goroutine 69
+	/Users/fritz/go/src/backend/pkg/search/server_routine.go:141 +0x69
+
+goroutine 85 gp=0xc0004bf6c0 m=nil [select]:
+runtime.gopark(0xc0036a9e30?, 0x3?, 0xc0?, 0x3c?, 0xc0036a980a?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:424 +0xce fp=0xc0036a96a0 sp=0xc0036a9680 pc=0x47112e
+runtime.selectgo(0xc0036a9e30, 0xc0036a9804, 0x0?, 0x0, 0x0?, 0x1)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/select.go:335 +0x7a5 fp=0xc0036a97c8 sp=0xc0036a96a0 pc=0x44e505
+gravwell/pkg/indexer/sharder.(*ShardingIndex).routine(0xc0030e9180, 0xc00368e080, 0xc00368e100, 0xc003686850)
+	/Users/fritz/go/src/backend/pkg/indexer/sharder/sharder.go:580 +0x9ad fp=0xc0036a9fb0 sp=0xc0036a97c8 pc=0xc6b74d
+gravwell/pkg/indexer/sharder.(*ShardingIndex).Start.gowrap1()
+	/Users/fritz/go/src/backend/pkg/indexer/sharder/sharder.go:510 +0x2c fp=0xc0036a9fe0 sp=0xc0036a9fb0 pc=0xc6acec
+runtime.goexit({})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/asm_amd64.s:1700 +0x1 fp=0xc0036a9fe8 sp=0xc0036a9fe0 pc=0x479701
+created by gravwell/pkg/indexer/sharder.(*ShardingIndex).Start in goroutine 1
+	/Users/fritz/go/src/backend/pkg/indexer/sharder/sharder.go:510 +0x345
+
+goroutine 86 gp=0xc0004bf880 m=nil [select]:
+runtime.gopark(0xc0036a0e30?, 0x3?, 0x80?, 0xf8?, 0xc0036a080a?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:424 +0xce fp=0xc0036a06a0 sp=0xc0036a0680 pc=0x47112e
+runtime.selectgo(0xc0036a0e30, 0xc0036a0804, 0x0?, 0x0, 0x0?, 0x1)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/select.go:335 +0x7a5 fp=0xc0036a07c8 sp=0xc0036a06a0 pc=0x44e505
+gravwell/pkg/indexer/sharder.(*ShardingIndex).routine(0xc0030e92c0, 0xc00368e120, 0xc00368e140, 0xc003686a80)
+	/Users/fritz/go/src/backend/pkg/indexer/sharder/sharder.go:580 +0x9ad fp=0xc0036a0fb0 sp=0xc0036a07c8 pc=0xc6b74d
+gravwell/pkg/indexer/sharder.(*ShardingIndex).Start.gowrap1()
+	/Users/fritz/go/src/backend/pkg/indexer/sharder/sharder.go:510 +0x2c fp=0xc0036a0fe0 sp=0xc0036a0fb0 pc=0xc6acec
+runtime.goexit({})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/asm_amd64.s:1700 +0x1 fp=0xc0036a0fe8 sp=0xc0036a0fe0 pc=0x479701
+created by gravwell/pkg/indexer/sharder.(*ShardingIndex).Start in goroutine 1
+	/Users/fritz/go/src/backend/pkg/indexer/sharder/sharder.go:510 +0x345
+
+goroutine 87 gp=0xc0004bfa40 m=nil [select]:
+runtime.gopark(0xc0036a1ec8?, 0x2?, 0x70?, 0x0?, 0xc0036a1d1c?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:424 +0xce fp=0xc0036a1bb0 sp=0xc0036a1b90 pc=0x47112e
+runtime.selectgo(0xc0036a1ec8, 0xc0036a1d18, 0x0?, 0x0, 0x0?, 0x1)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/select.go:335 +0x7a5 fp=0xc0036a1cd8 sp=0xc0036a1bb0 pc=0x44e505
+gravwell/pkg/indexer/manager.(*Idx).routine(0xc002db4408, 0xc00368e0a0, 0xc00368e080, 0xc00368e120, 0xc003686c40)
+	/Users/fritz/go/src/backend/pkg/indexer/manager/index.go:658 +0x2c8 fp=0xc0036a1fa8 sp=0xc0036a1cd8 pc=0xca8628
+gravwell/pkg/indexer/manager.(*Idx).Start.gowrap1()
+	/Users/fritz/go/src/backend/pkg/indexer/manager/index.go:507 +0x30 fp=0xc0036a1fe0 sp=0xc0036a1fa8 pc=0xca7b90
+runtime.goexit({})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/asm_amd64.s:1700 +0x1 fp=0xc0036a1fe8 sp=0xc0036a1fe0 pc=0x479701
+created by gravwell/pkg/indexer/manager.(*Idx).Start in goroutine 1
+	/Users/fritz/go/src/backend/pkg/indexer/manager/index.go:507 +0x485
+
+goroutine 177 gp=0xc0004bfc00 m=nil [IO wait]:
+runtime.gopark(0x16fc2e0?, 0x7329fd?, 0x0?, 0x0?, 0xb?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:424 +0xce fp=0xc00082b9d8 sp=0xc00082b9b8 pc=0x47112e
+runtime.netpollblock(0x495298?, 0x407f66?, 0x0?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/netpoll.go:575 +0xf7 fp=0xc00082ba10 sp=0xc00082b9d8 pc=0x434df7
+internal/poll.runtime_pollWait(0x7fffb8afb828, 0x72)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/netpoll.go:351 +0x85 fp=0xc00082ba30 sp=0xc00082ba10 pc=0x470425
+internal/poll.(*pollDesc).wait(0xc0030da480?, 0xc0007ba000?, 0x0)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/internal/poll/fd_poll_runtime.go:84 +0x27 fp=0xc00082ba58 sp=0xc00082ba30 pc=0x516167
+internal/poll.(*pollDesc).waitRead(...)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/internal/poll/fd_poll_runtime.go:89
+internal/poll.(*FD).Read(0xc0030da480, {0xc0007ba000, 0x1000, 0x1000})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/internal/poll/fd_unix.go:165 +0x27a fp=0xc00082baf0 sp=0xc00082ba58 pc=0x51745a
+net.(*netFD).Read(0xc0030da480, {0xc0007ba000?, 0xc00075e840?, 0xc003e8a5a8?})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/net/fd_posix.go:55 +0x25 fp=0xc00082bb38 sp=0xc00082baf0 pc=0x654425
+net.(*conn).Read(0xc000db4188, {0xc0007ba000?, 0x0?, 0x2e?})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/net/net.go:189 +0x45 fp=0xc00082bb80 sp=0xc00082bb38 pc=0x6684a5
+net.(*TCPConn).Read(0x0?, {0xc0007ba000?, 0x0?, 0xc0030da4a0?})
+	<autogenerated>:1 +0x25 fp=0xc00082bbb0 sp=0xc00082bb80 pc=0x67e845
+bufio.(*Reader).Read(0xc0001701e0, {0xc00084e370, 0x1, 0xc00082bc48?})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/bufio/bufio.go:241 +0x197 fp=0xc00082bbe8 sp=0xc00082bbb0 pc=0x57b017
+io.ReadAtLeast({0x1b3d7e0, 0xc0001701e0}, {0xc00084e370, 0x1, 0x9}, 0x1)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/io/io.go:335 +0x90 fp=0xc00082bc30 sp=0xc00082bbe8 pc=0x4b2290
+io.ReadFull(...)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/io/io.go:354
+encoding/gob.decodeUintReader({0x1b3d7e0, 0xc0001701e0}, {0xc00084e370, 0x9, 0x9})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/encoding/gob/decode.go:116 +0x51 fp=0xc00082bc88 sp=0xc00082bc30 pc=0x71d531
+encoding/gob.(*Decoder).recvMessage(0xc000490360)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/encoding/gob/decoder.go:84 +0x33 fp=0xc00082bcc0 sp=0xc00082bc88 pc=0x726db3
+encoding/gob.(*Decoder).decodeTypeSequence(0xc000490360, 0x0)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/encoding/gob/decoder.go:150 +0x47 fp=0xc00082bcf0 sp=0xc00082bcc0 pc=0x727127
+encoding/gob.(*Decoder).DecodeValue(0xc000490360, {0x1558140?, 0xc002dd42c0?, 0xc003a80780?})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/encoding/gob/decoder.go:229 +0x168 fp=0xc00082bd70 sp=0xc00082bcf0 pc=0x727568
+encoding/gob.(*Decoder).Decode(0xc000490360, {0x1558140?, 0xc002dd42c0?})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/encoding/gob/decoder.go:206 +0x12f fp=0xc00082bdc8 sp=0xc00082bd70 pc=0x7273af
+gravwell/pkg/search/search_api.(*Netio).Decode(...)
+	/Users/fritz/go/src/backend/pkg/search/search_api/comms.go:350
+gravwell/pkg/search.(*serverRoutine).routine(0xc003c1c540)
+	/Users/fritz/go/src/backend/pkg/search/server_routine.go:208 +0x579 fp=0xc00082bfc8 sp=0xc00082bdc8 pc=0x14c4339
+gravwell/pkg/search.(*serverRoutine).Start.gowrap1()
+	/Users/fritz/go/src/backend/pkg/search/server_routine.go:141 +0x25 fp=0xc00082bfe0 sp=0xc00082bfc8 pc=0x14c3c85
+runtime.goexit({})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/asm_amd64.s:1700 +0x1 fp=0xc00082bfe8 sp=0xc00082bfe0 pc=0x479701
+created by gravwell/pkg/search.(*serverRoutine).Start in goroutine 69
+	/Users/fritz/go/src/backend/pkg/search/server_routine.go:141 +0x69
+
+goroutine 89 gp=0xc0004bfdc0 m=nil [select]:
+runtime.gopark(0xc000139e30?, 0x3?, 0x40?, 0x35?, 0xc00013980a?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:424 +0xce fp=0xc0001396a0 sp=0xc000139680 pc=0x47112e
+runtime.selectgo(0xc000139e30, 0xc000139804, 0x0?, 0x0, 0x0?, 0x1)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/select.go:335 +0x7a5 fp=0xc0001397c8 sp=0xc0001396a0 pc=0x44e505
+gravwell/pkg/indexer/sharder.(*ShardingIndex).routine(0xc000938000, 0xc00368e160, 0xc00368e1e0, 0xc003687030)
+	/Users/fritz/go/src/backend/pkg/indexer/sharder/sharder.go:580 +0x9ad fp=0xc000139fb0 sp=0xc0001397c8 pc=0xc6b74d
+gravwell/pkg/indexer/sharder.(*ShardingIndex).Start.gowrap1()
+	/Users/fritz/go/src/backend/pkg/indexer/sharder/sharder.go:510 +0x2c fp=0xc000139fe0 sp=0xc000139fb0 pc=0xc6acec
+runtime.goexit({})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/asm_amd64.s:1700 +0x1 fp=0xc000139fe8 sp=0xc000139fe0 pc=0x479701
+created by gravwell/pkg/indexer/sharder.(*ShardingIndex).Start in goroutine 1
+	/Users/fritz/go/src/backend/pkg/indexer/sharder/sharder.go:510 +0x345
+
+goroutine 90 gp=0xc000184700 m=nil [select]:
+runtime.gopark(0xc0036a3e30?, 0x3?, 0x0?, 0x47?, 0xc0036a380a?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:424 +0xce fp=0xc0036a36a0 sp=0xc0036a3680 pc=0x47112e
+runtime.selectgo(0xc0036a3e30, 0xc0036a3804, 0x0?, 0x0, 0x0?, 0x1)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/select.go:335 +0x7a5 fp=0xc0036a37c8 sp=0xc0036a36a0 pc=0x44e505
+gravwell/pkg/indexer/sharder.(*ShardingIndex).routine(0xc000938140, 0xc00368e200, 0xc00368e220, 0xc003687260)
+	/Users/fritz/go/src/backend/pkg/indexer/sharder/sharder.go:580 +0x9ad fp=0xc0036a3fb0 sp=0xc0036a37c8 pc=0xc6b74d
+gravwell/pkg/indexer/sharder.(*ShardingIndex).Start.gowrap1()
+	/Users/fritz/go/src/backend/pkg/indexer/sharder/sharder.go:510 +0x2c fp=0xc0036a3fe0 sp=0xc0036a3fb0 pc=0xc6acec
+runtime.goexit({})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/asm_amd64.s:1700 +0x1 fp=0xc0036a3fe8 sp=0xc0036a3fe0 pc=0x479701
+created by gravwell/pkg/indexer/sharder.(*ShardingIndex).Start in goroutine 1
+	/Users/fritz/go/src/backend/pkg/indexer/sharder/sharder.go:510 +0x345
+
+goroutine 91 gp=0xc0001848c0 m=nil [select]:
+runtime.gopark(0xc00369cec8?, 0x2?, 0x70?, 0x0?, 0xc00369cd1c?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:424 +0xce fp=0xc00369cbb0 sp=0xc00369cb90 pc=0x47112e
+runtime.selectgo(0xc00369cec8, 0xc00369cd18, 0x0?, 0x0, 0x0?, 0x1)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/select.go:335 +0x7a5 fp=0xc00369ccd8 sp=0xc00369cbb0 pc=0x44e505
+gravwell/pkg/indexer/manager.(*Idx).routine(0xc0000b6c08, 0xc00368e180, 0xc00368e160, 0xc00368e200, 0xc003687420)
+	/Users/fritz/go/src/backend/pkg/indexer/manager/index.go:658 +0x2c8 fp=0xc00369cfa8 sp=0xc00369ccd8 pc=0xca8628
+gravwell/pkg/indexer/manager.(*Idx).Start.gowrap1()
+	/Users/fritz/go/src/backend/pkg/indexer/manager/index.go:507 +0x30 fp=0xc00369cfe0 sp=0xc00369cfa8 pc=0xca7b90
+runtime.goexit({})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/asm_amd64.s:1700 +0x1 fp=0xc00369cfe8 sp=0xc00369cfe0 pc=0x479701
+created by gravwell/pkg/indexer/manager.(*Idx).Start in goroutine 1
+	/Users/fritz/go/src/backend/pkg/indexer/manager/index.go:507 +0x485
+
+goroutine 93 gp=0xc000184c40 m=nil [select]:
+runtime.gopark(0xc000137e30?, 0x3?, 0xe0?, 0x6b?, 0xc00013780a?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:424 +0xce fp=0xc0001376a0 sp=0xc000137680 pc=0x47112e
+runtime.selectgo(0xc000137e30, 0xc000137804, 0x0?, 0x0, 0x0?, 0x1)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/select.go:335 +0x7a5 fp=0xc0001377c8 sp=0xc0001376a0 pc=0x44e505
+gravwell/pkg/indexer/sharder.(*ShardingIndex).routine(0xc000dd4f00, 0xc00368e240, 0xc00368e2c0, 0xc003687810)
+	/Users/fritz/go/src/backend/pkg/indexer/sharder/sharder.go:580 +0x9ad fp=0xc000137fb0 sp=0xc0001377c8 pc=0xc6b74d
+gravwell/pkg/indexer/sharder.(*ShardingIndex).Start.gowrap1()
+	/Users/fritz/go/src/backend/pkg/indexer/sharder/sharder.go:510 +0x2c fp=0xc000137fe0 sp=0xc000137fb0 pc=0xc6acec
+runtime.goexit({})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/asm_amd64.s:1700 +0x1 fp=0xc000137fe8 sp=0xc000137fe0 pc=0x479701
+created by gravwell/pkg/indexer/sharder.(*ShardingIndex).Start in goroutine 1
+	/Users/fritz/go/src/backend/pkg/indexer/sharder/sharder.go:510 +0x345
+
+goroutine 94 gp=0xc000184e00 m=nil [select]:
+runtime.gopark(0xc00369fec8?, 0x2?, 0x70?, 0x0?, 0xc00369fd1c?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:424 +0xce fp=0xc00369fbb0 sp=0xc00369fb90 pc=0x47112e
+runtime.selectgo(0xc00369fec8, 0xc00369fd18, 0x0?, 0x0, 0x0?, 0x1)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/select.go:335 +0x7a5 fp=0xc00369fcd8 sp=0xc00369fbb0 pc=0x44e505
+gravwell/pkg/indexer/manager.(*Idx).routine(0xc0000b7408, 0xc00368e260, 0xc00368e240, 0x0, 0xc0036879d0)
+	/Users/fritz/go/src/backend/pkg/indexer/manager/index.go:658 +0x2c8 fp=0xc00369ffa8 sp=0xc00369fcd8 pc=0xca8628
+gravwell/pkg/indexer/manager.(*Idx).Start.gowrap1()
+	/Users/fritz/go/src/backend/pkg/indexer/manager/index.go:507 +0x30 fp=0xc00369ffe0 sp=0xc00369ffa8 pc=0xca7b90
+runtime.goexit({})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/asm_amd64.s:1700 +0x1 fp=0xc00369ffe8 sp=0xc00369ffe0 pc=0x479701
+created by gravwell/pkg/indexer/manager.(*Idx).Start in goroutine 1
+	/Users/fritz/go/src/backend/pkg/indexer/manager/index.go:507 +0x485
+
+goroutine 151 gp=0xc000185180 m=nil [IO wait]:
+runtime.gopark(0x16fc2e0?, 0x7329fd?, 0x0?, 0x0?, 0xb?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:424 +0xce fp=0xc0000df9d8 sp=0xc0000df9b8 pc=0x47112e
+runtime.netpollblock(0x495298?, 0x407f66?, 0x0?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/netpoll.go:575 +0xf7 fp=0xc0000dfa10 sp=0xc0000df9d8 pc=0x434df7
+internal/poll.runtime_pollWait(0x7fffb8afb3c8, 0x72)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/netpoll.go:351 +0x85 fp=0xc0000dfa30 sp=0xc0000dfa10 pc=0x470425
+internal/poll.(*pollDesc).wait(0xc000670180?, 0xc003ecc000?, 0x0)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/internal/poll/fd_poll_runtime.go:84 +0x27 fp=0xc0000dfa58 sp=0xc0000dfa30 pc=0x516167
+internal/poll.(*pollDesc).waitRead(...)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/internal/poll/fd_poll_runtime.go:89
+internal/poll.(*FD).Read(0xc000670180, {0xc003ecc000, 0x1000, 0x1000})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/internal/poll/fd_unix.go:165 +0x27a fp=0xc0000dfaf0 sp=0xc0000dfa58 pc=0x51745a
+net.(*netFD).Read(0xc000670180, {0xc003ecc000?, 0xc003e6cb00?, 0xc00003e0a8?})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/net/fd_posix.go:55 +0x25 fp=0xc0000dfb38 sp=0xc0000dfaf0 pc=0x654425
+net.(*conn).Read(0xc003cfa2e8, {0xc003ecc000?, 0x0?, 0x2e?})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/net/net.go:189 +0x45 fp=0xc0000dfb80 sp=0xc0000dfb38 pc=0x6684a5
+net.(*TCPConn).Read(0x0?, {0xc003ecc000?, 0x0?, 0xc0006701a0?})
+	<autogenerated>:1 +0x25 fp=0xc0000dfbb0 sp=0xc0000dfb80 pc=0x67e845
+bufio.(*Reader).Read(0xc003f9e360, {0xc003f2aba0, 0x1, 0xc0000dfc48?})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/bufio/bufio.go:241 +0x197 fp=0xc0000dfbe8 sp=0xc0000dfbb0 pc=0x57b017
+io.ReadAtLeast({0x1b3d7e0, 0xc003f9e360}, {0xc003f2aba0, 0x1, 0x9}, 0x1)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/io/io.go:335 +0x90 fp=0xc0000dfc30 sp=0xc0000dfbe8 pc=0x4b2290
+io.ReadFull(...)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/io/io.go:354
+encoding/gob.decodeUintReader({0x1b3d7e0, 0xc003f9e360}, {0xc003f2aba0, 0x9, 0x9})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/encoding/gob/decode.go:116 +0x51 fp=0xc0000dfc88 sp=0xc0000dfc30 pc=0x71d531
+encoding/gob.(*Decoder).recvMessage(0xc003b8c1b0)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/encoding/gob/decoder.go:84 +0x33 fp=0xc0000dfcc0 sp=0xc0000dfc88 pc=0x726db3
+encoding/gob.(*Decoder).decodeTypeSequence(0xc003b8c1b0, 0x0)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/encoding/gob/decoder.go:150 +0x47 fp=0xc0000dfcf0 sp=0xc0000dfcc0 pc=0x727127
+encoding/gob.(*Decoder).DecodeValue(0xc003b8c1b0, {0x1558140?, 0xc0040267e0?, 0xc003f846c0?})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/encoding/gob/decoder.go:229 +0x168 fp=0xc0000dfd70 sp=0xc0000dfcf0 pc=0x727568
+encoding/gob.(*Decoder).Decode(0xc003b8c1b0, {0x1558140?, 0xc0040267e0?})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/encoding/gob/decoder.go:206 +0x12f fp=0xc0000dfdc8 sp=0xc0000dfd70 pc=0x7273af
+gravwell/pkg/search/search_api.(*Netio).Decode(...)
+	/Users/fritz/go/src/backend/pkg/search/search_api/comms.go:350
+gravwell/pkg/search.(*serverRoutine).routine(0xc003b90240)
+	/Users/fritz/go/src/backend/pkg/search/server_routine.go:208 +0x579 fp=0xc0000dffc8 sp=0xc0000dfdc8 pc=0x14c4339
+gravwell/pkg/search.(*serverRoutine).Start.gowrap1()
+	/Users/fritz/go/src/backend/pkg/search/server_routine.go:141 +0x25 fp=0xc0000dffe0 sp=0xc0000dffc8 pc=0x14c3c85
+runtime.goexit({})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/asm_amd64.s:1700 +0x1 fp=0xc0000dffe8 sp=0xc0000dffe0 pc=0x479701
+created by gravwell/pkg/search.(*serverRoutine).Start in goroutine 69
+	/Users/fritz/go/src/backend/pkg/search/server_routine.go:141 +0x69
+
+goroutine 96 gp=0xc000185340 m=nil [select]:
+runtime.gopark(0xc002dc5e30?, 0x3?, 0x70?, 0x25?, 0xc002dc580a?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:424 +0xce fp=0xc002dc56a0 sp=0xc002dc5680 pc=0x47112e
+runtime.selectgo(0xc002dc5e30, 0xc002dc5804, 0x0?, 0x0, 0x0?, 0x1)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/select.go:335 +0x7a5 fp=0xc002dc57c8 sp=0xc002dc56a0 pc=0x44e505
+gravwell/pkg/indexer/sharder.(*ShardingIndex).routine(0xc002d8c500, 0xc00368e2e0, 0xc00368e360, 0xc003687dc0)
+	/Users/fritz/go/src/backend/pkg/indexer/sharder/sharder.go:580 +0x9ad fp=0xc002dc5fb0 sp=0xc002dc57c8 pc=0xc6b74d
+gravwell/pkg/indexer/sharder.(*ShardingIndex).Start.gowrap1()
+	/Users/fritz/go/src/backend/pkg/indexer/sharder/sharder.go:510 +0x2c fp=0xc002dc5fe0 sp=0xc002dc5fb0 pc=0xc6acec
+runtime.goexit({})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/asm_amd64.s:1700 +0x1 fp=0xc002dc5fe8 sp=0xc002dc5fe0 pc=0x479701
+created by gravwell/pkg/indexer/sharder.(*ShardingIndex).Start in goroutine 1
+	/Users/fritz/go/src/backend/pkg/indexer/sharder/sharder.go:510 +0x345
+
+goroutine 97 gp=0xc000185500 m=nil [select]:
+runtime.gopark(0xc0036a5e30?, 0x3?, 0x0?, 0x55?, 0xc0036a580a?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:424 +0xce fp=0xc0036a56a0 sp=0xc0036a5680 pc=0x47112e
+runtime.selectgo(0xc0036a5e30, 0xc0036a5804, 0x0?, 0x0, 0x0?, 0x1)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/select.go:335 +0x7a5 fp=0xc0036a57c8 sp=0xc0036a56a0 pc=0x44e505
+gravwell/pkg/indexer/sharder.(*ShardingIndex).routine(0xc002d8c640, 0xc00368e380, 0xc00368e3a0, 0xc0036ba070)
+	/Users/fritz/go/src/backend/pkg/indexer/sharder/sharder.go:580 +0x9ad fp=0xc0036a5fb0 sp=0xc0036a57c8 pc=0xc6b74d
+gravwell/pkg/indexer/sharder.(*ShardingIndex).Start.gowrap1()
+	/Users/fritz/go/src/backend/pkg/indexer/sharder/sharder.go:510 +0x2c fp=0xc0036a5fe0 sp=0xc0036a5fb0 pc=0xc6acec
+runtime.goexit({})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/asm_amd64.s:1700 +0x1 fp=0xc0036a5fe8 sp=0xc0036a5fe0 pc=0x479701
+created by gravwell/pkg/indexer/sharder.(*ShardingIndex).Start in goroutine 1
+	/Users/fritz/go/src/backend/pkg/indexer/sharder/sharder.go:510 +0x345
+
+goroutine 98 gp=0xc0001856c0 m=nil [select]:
+runtime.gopark(0xc0036b8ec8?, 0x2?, 0x0?, 0x0?, 0xc0036b8d1c?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:424 +0xce fp=0xc0036b8bb0 sp=0xc0036b8b90 pc=0x47112e
+runtime.selectgo(0xc0036b8ec8, 0xc0036b8d18, 0x0?, 0x0, 0x0?, 0x1)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/select.go:335 +0x7a5 fp=0xc0036b8cd8 sp=0xc0036b8bb0 pc=0x44e505
+gravwell/pkg/indexer/manager.(*Idx).routine(0xc002db4008, 0xc00368e300, 0xc00368e2e0, 0xc00368e380, 0xc0036ba230)
+	/Users/fritz/go/src/backend/pkg/indexer/manager/index.go:658 +0x2c8 fp=0xc0036b8fa8 sp=0xc0036b8cd8 pc=0xca8628
+gravwell/pkg/indexer/manager.(*Idx).Start.gowrap1()
+	/Users/fritz/go/src/backend/pkg/indexer/manager/index.go:507 +0x30 fp=0xc0036b8fe0 sp=0xc0036b8fa8 pc=0xca7b90
+runtime.goexit({})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/asm_amd64.s:1700 +0x1 fp=0xc0036b8fe8 sp=0xc0036b8fe0 pc=0x479701
+created by gravwell/pkg/indexer/manager.(*Idx).Start in goroutine 1
+	/Users/fritz/go/src/backend/pkg/indexer/manager/index.go:507 +0x485
+
+goroutine 99 gp=0xc000185880 m=nil [select]:
+runtime.gopark(0xc002dc7df8?, 0x5?, 0x78?, 0x8?, 0xc002dc7cbe?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:424 +0xce fp=0xc002dc7b20 sp=0xc002dc7b00 pc=0x47112e
+runtime.selectgo(0xc002dc7df8, 0xc002dc7cb4, 0x9?, 0x0, 0x1?, 0x1)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/select.go:335 +0x7a5 fp=0xc002dc7c48 sp=0xc002dc7b20 pc=0x44e505
+gravwell/pkg/indexer/manager.(*IndexManager).ageoutRoutine(0xc000133680, {{0xc0036c2008, 0x6, 0x9}, {0xc003695320, 0x1, 0x1}, 0x0, {0x0, 0x0, ...}, ...})
+	/Users/fritz/go/src/backend/pkg/indexer/manager/indexManagerAgeout.go:136 +0x34f fp=0xc002dc7f70 sp=0xc002dc7c48 pc=0xcbc88f
+gravwell/pkg/indexer/manager.(*IndexManager).startAgeoutRoutine.gowrap1()
+	/Users/fritz/go/src/backend/pkg/indexer/manager/indexManagerAgeout.go:97 +0x45 fp=0xc002dc7fe0 sp=0xc002dc7f70 pc=0xcbc465
+runtime.goexit({})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/asm_amd64.s:1700 +0x1 fp=0xc002dc7fe8 sp=0xc002dc7fe0 pc=0x479701
+created by gravwell/pkg/indexer/manager.(*IndexManager).startAgeoutRoutine in goroutine 1
+	/Users/fritz/go/src/backend/pkg/indexer/manager/indexManagerAgeout.go:97 +0x2b8
+
+goroutine 67 gp=0xc000a84700 m=nil [select]:
+runtime.gopark(0xc003d84f58?, 0x2?, 0xbf?, 0x1d?, 0xc003d84f04?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:424 +0xce fp=0xc003d84da8 sp=0xc003d84d88 pc=0x47112e
+runtime.selectgo(0xc003d84f58, 0xc003d84f00, 0x0?, 0x0, 0x2?, 0x1)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/select.go:335 +0x7a5 fp=0xc003d84ed0 sp=0xc003d84da8 pc=0x44e505
+gravwell/pkg/ingestserver.(*Ingest).listenRoutines(0xc0030e4100)
+	/Users/fritz/go/src/backend/pkg/ingestserver/ingest.go:372 +0x2dd fp=0xc003d84fc8 sp=0xc003d84ed0 pc=0xf2cedd
+gravwell/pkg/ingestserver.(*Ingest).Start.gowrap2()
+	/Users/fritz/go/src/backend/pkg/ingestserver/ingest.go:420 +0x25 fp=0xc003d84fe0 sp=0xc003d84fc8 pc=0xf2d4c5
+runtime.goexit({})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/asm_amd64.s:1700 +0x1 fp=0xc003d84fe8 sp=0xc003d84fe0 pc=0x479701
+created by gravwell/pkg/ingestserver.(*Ingest).Start in goroutine 1
+	/Users/fritz/go/src/backend/pkg/ingestserver/ingest.go:420 +0xd6
+
+goroutine 68 gp=0xc000a848c0 m=nil [select]:
+runtime.gopark(0xc003ecbe08?, 0x2?, 0x0?, 0x0?, 0xc003ecbbf8?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:424 +0xce fp=0xc003ecb998 sp=0xc003ecb978 pc=0x47112e
+runtime.selectgo(0xc003ecbe08, 0xc003ecbbf4, 0xc003ecbbd2?, 0x0, 0x20?, 0x1)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/select.go:335 +0x7a5 fp=0xc003ecbac0 sp=0xc003ecb998 pc=0x44e505
+gravwell/pkg/monitoring.(*Monitor).diskRoutine(0xc00091a4b0)
+	/Users/fritz/go/src/backend/pkg/monitoring/disk.go:36 +0xdc fp=0xc003ecbfc8 sp=0xc003ecbac0 pc=0xf3c59c
+gravwell/pkg/monitoring.(*Monitor).Start.gowrap1()
+	/Users/fritz/go/src/backend/pkg/monitoring/monitor.go:57 +0x25 fp=0xc003ecbfe0 sp=0xc003ecbfc8 pc=0xf3d145
+runtime.goexit({})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/asm_amd64.s:1700 +0x1 fp=0xc003ecbfe8 sp=0xc003ecbfe0 pc=0x479701
+created by gravwell/pkg/monitoring.(*Monitor).Start in goroutine 1
+	/Users/fritz/go/src/backend/pkg/monitoring/monitor.go:57 +0x4f
+
+goroutine 69 gp=0xc000a84a80 m=nil [IO wait]:
+runtime.gopark(0x0?, 0x0?, 0x0?, 0x0?, 0x0?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:424 +0xce fp=0xc0036b4d18 sp=0xc0036b4cf8 pc=0x47112e
+runtime.netpollblock(0x30?, 0x407f66?, 0x0?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/netpoll.go:575 +0xf7 fp=0xc0036b4d50 sp=0xc0036b4d18 pc=0x434df7
+internal/poll.runtime_pollWait(0x7fffb8afbda0, 0x72)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/netpoll.go:351 +0x85 fp=0xc0036b4d70 sp=0xc0036b4d50 pc=0x470425
+internal/poll.(*pollDesc).wait(0xc000ddc280?, 0x10?, 0x0)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/internal/poll/fd_poll_runtime.go:84 +0x27 fp=0xc0036b4d98 sp=0xc0036b4d70 pc=0x516167
+internal/poll.(*pollDesc).waitRead(...)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/internal/poll/fd_poll_runtime.go:89
+internal/poll.(*FD).Accept(0xc000ddc280)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/internal/poll/fd_unix.go:620 +0x295 fp=0xc0036b4e40 sp=0xc0036b4d98 pc=0x51b535
+net.(*netFD).accept(0xc000ddc280)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/net/fd_unix.go:172 +0x29 fp=0xc0036b4ef8 sp=0xc0036b4e40 pc=0x6563e9
+net.(*TCPListener).accept(0xc003698300)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/net/tcpsock_posix.go:159 +0x1e fp=0xc0036b4f48 sp=0xc0036b4ef8 pc=0x67417e
+net.(*TCPListener).Accept(0xc003698300)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/net/tcpsock.go:372 +0x30 fp=0xc0036b4f78 sp=0xc0036b4f48 pc=0x673030
+gravwell/pkg/search.(*Server).routine(0xc0036cc210)
+	/Users/fritz/go/src/backend/pkg/search/server.go:323 +0x4a fp=0xc0036b4fc8 sp=0xc0036b4f78 pc=0x14c29ca
+gravwell/pkg/search.(*Server).Start.gowrap2()
+	/Users/fritz/go/src/backend/pkg/search/server.go:143 +0x25 fp=0xc0036b4fe0 sp=0xc0036b4fc8 pc=0x14c0da5
+runtime.goexit({})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/asm_amd64.s:1700 +0x1 fp=0xc0036b4fe8 sp=0xc0036b4fe0 pc=0x479701
+created by gravwell/pkg/search.(*Server).Start in goroutine 1
+	/Users/fritz/go/src/backend/pkg/search/server.go:143 +0xc5
+
+goroutine 70 gp=0xc000a84c40 m=nil [select]:
+runtime.gopark(0xc000b13e48?, 0x6?, 0xd8?, 0x3?, 0xc000b13dfc?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:424 +0xce fp=0xc000b13c90 sp=0xc000b13c70 pc=0x47112e
+runtime.selectgo(0xc000b13e48, 0xc000b13df0, 0x0?, 0x0, 0x0?, 0x1)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/select.go:335 +0x7a5 fp=0xc000b13db8 sp=0xc000b13c90 pc=0x44e505
+gravwell/pkg/search.(*Server).statsRoutine(0xc0036cc210)
+	/Users/fritz/go/src/backend/pkg/search/server.go:297 +0x36f fp=0xc000b13fc8 sp=0xc000b13db8 pc=0x14c1b2f
+gravwell/pkg/search.(*Server).Start.gowrap3()
+	/Users/fritz/go/src/backend/pkg/search/server.go:144 +0x25 fp=0xc000b13fe0 sp=0xc000b13fc8 pc=0x14c0d45
+runtime.goexit({})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/asm_amd64.s:1700 +0x1 fp=0xc000b13fe8 sp=0xc000b13fe0 pc=0x479701
+created by gravwell/pkg/search.(*Server).Start in goroutine 1
+	/Users/fritz/go/src/backend/pkg/search/server.go:144 +0x105
+
+goroutine 71 gp=0xc000a84e00 m=nil [chan receive, 2 minutes]:
+runtime.gopark(0x8757d994da07e7ac?, 0x1619e20?, 0x1?, 0x0?, 0xc000e10728?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:424 +0xce fp=0xc000e10698 sp=0xc000e10678 pc=0x47112e
+runtime.chanrecv(0xc0036bad20, 0xc000e107b0, 0x1)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/chan.go:639 +0x41c fp=0xc000e10710 sp=0xc000e10698 pc=0x409c3c
+runtime.chanrecv2(0xc0036bad20?, 0xc000e107c0?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/chan.go:494 +0x12 fp=0xc000e10738 sp=0xc000e10710 pc=0x409812
+main.main.func3()
+	/Users/fritz/go/src/backend/backend/main.go:779 +0x85 fp=0xc000e107e0 sp=0xc000e10738 pc=0x14dbe85
+runtime.goexit({})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/asm_amd64.s:1700 +0x1 fp=0xc000e107e8 sp=0xc000e107e0 pc=0x479701
+created by main.main in goroutine 1
+	/Users/fritz/go/src/backend/backend/main.go:774 +0x6ba5
+
+goroutine 72 gp=0xc000a84fc0 m=nil [IO wait, 2 minutes]:
+runtime.gopark(0x0?, 0x0?, 0x0?, 0x0?, 0x0?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:424 +0xce fp=0xc000e10d10 sp=0xc000e10cf0 pc=0x47112e
+runtime.netpollblock(0x0?, 0x407f66?, 0x0?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/netpoll.go:575 +0xf7 fp=0xc000e10d48 sp=0xc000e10d10 pc=0x434df7
+internal/poll.runtime_pollWait(0x7fffb8afbfd0, 0x72)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/netpoll.go:351 +0x85 fp=0xc000e10d68 sp=0xc000e10d48 pc=0x470425
+internal/poll.(*pollDesc).wait(0xc000ddc080?, 0x0?, 0x0)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/internal/poll/fd_poll_runtime.go:84 +0x27 fp=0xc000e10d90 sp=0xc000e10d68 pc=0x516167
+internal/poll.(*pollDesc).waitRead(...)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/internal/poll/fd_poll_runtime.go:89
+internal/poll.(*FD).Accept(0xc000ddc080)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/internal/poll/fd_unix.go:620 +0x295 fp=0xc000e10e38 sp=0xc000e10d90 pc=0x51b535
+net.(*netFD).accept(0xc000ddc080)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/net/fd_unix.go:172 +0x29 fp=0xc000e10ef0 sp=0xc000e10e38 pc=0x6563e9
+net.(*TCPListener).accept(0xc0036982c0)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/net/tcpsock_posix.go:159 +0x1e fp=0xc000e10f40 sp=0xc000e10ef0 pc=0x67417e
+net.(*TCPListener).Accept(0xc0036982c0)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/net/tcpsock.go:372 +0x30 fp=0xc000e10f70 sp=0xc000e10f40 pc=0x673030
+gravwell/pkg/ingestserver.(*Ingest).clearListenRoutine(0xc0030e4100, 0xc0036bad90, 0xc0036bae00)
+	/Users/fritz/go/src/backend/pkg/ingestserver/ingest.go:257 +0x5e fp=0xc000e10fb8 sp=0xc000e10f70 pc=0xf2c53e
+gravwell/pkg/ingestserver.(*Ingest).listenRoutines.gowrap1()
+	/Users/fritz/go/src/backend/pkg/ingestserver/ingest.go:356 +0x28 fp=0xc000e10fe0 sp=0xc000e10fb8 pc=0xf2d2c8
+runtime.goexit({})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/asm_amd64.s:1700 +0x1 fp=0xc000e10fe8 sp=0xc000e10fe0 pc=0x479701
+created by gravwell/pkg/ingestserver.(*Ingest).listenRoutines in goroutine 67
+	/Users/fritz/go/src/backend/pkg/ingestserver/ingest.go:356 +0xe6
+
+goroutine 73 gp=0xc000a85180 m=nil [IO wait, 2 minutes]:
+runtime.gopark(0x0?, 0x0?, 0x0?, 0x0?, 0x0?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:424 +0xce fp=0xc000e11548 sp=0xc000e11528 pc=0x47112e
+runtime.netpollblock(0x0?, 0x407f66?, 0x0?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/netpoll.go:575 +0xf7 fp=0xc000e11580 sp=0xc000e11548 pc=0x434df7
+internal/poll.runtime_pollWait(0x7fffb8afbeb8, 0x72)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/netpoll.go:351 +0x85 fp=0xc000e115a0 sp=0xc000e11580 pc=0x470425
+internal/poll.(*pollDesc).wait(0xc000ddc100?, 0x0?, 0x0)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/internal/poll/fd_poll_runtime.go:84 +0x27 fp=0xc000e115c8 sp=0xc000e115a0 pc=0x516167
+internal/poll.(*pollDesc).waitRead(...)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/internal/poll/fd_poll_runtime.go:89
+internal/poll.(*FD).Accept(0xc000ddc100)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/internal/poll/fd_unix.go:620 +0x295 fp=0xc000e11670 sp=0xc000e115c8 pc=0x51b535
+net.(*netFD).accept(0xc000ddc100)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/net/fd_unix.go:172 +0x29 fp=0xc000e11728 sp=0xc000e11670 pc=0x6563e9
+net.(*UnixListener).accept(0x0?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/net/unixsock_posix.go:172 +0x16 fp=0xc000e11750 sp=0xc000e11728 pc=0x67bdf6
+net.(*UnixListener).Accept(0xc00091a450)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/net/unixsock.go:260 +0x30 fp=0xc000e11780 sp=0xc000e11750 pc=0x67a2b0
+gravwell/pkg/ingestserver.(*Ingest).pipeListenRoutine(0xc0030e4100, 0xc0036bad90, 0xc0036bae00)
+	/Users/fritz/go/src/backend/pkg/ingestserver/ingest.go:282 +0x5e fp=0xc000e117b8 sp=0xc000e11780 pc=0xf2c65e
+gravwell/pkg/ingestserver.(*Ingest).listenRoutines.gowrap2()
+	/Users/fritz/go/src/backend/pkg/ingestserver/ingest.go:357 +0x28 fp=0xc000e117e0 sp=0xc000e117b8 pc=0xf2d268
+runtime.goexit({})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/asm_amd64.s:1700 +0x1 fp=0xc000e117e8 sp=0xc000e117e0 pc=0x479701
+created by gravwell/pkg/ingestserver.(*Ingest).listenRoutines in goroutine 67
+	/Users/fritz/go/src/backend/pkg/ingestserver/ingest.go:357 +0x14c
+
+goroutine 100 gp=0xc000105a40 m=nil [select]:
+runtime.gopark(0xc003ec7d30?, 0x2?, 0xe0?, 0x2?, 0xc003ec7c94?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:424 +0xce fp=0xc003ec7b28 sp=0xc003ec7b08 pc=0x47112e
+runtime.selectgo(0xc003ec7d30, 0xc003ec7c90, 0x0?, 0x0, 0x2?, 0x1)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/select.go:335 +0x7a5 fp=0xc003ec7c50 sp=0xc003ec7b28 pc=0x44e505
+gravwell/pkg/search.(*serverRoutine).serviceStartStatStream(0xc0007c0e40)
+	/Users/fritz/go/src/backend/pkg/search/server_routine_utilities.go:299 +0x1db fp=0xc003ec7dc8 sp=0xc003ec7c50 pc=0x14cd4db
+gravwell/pkg/search.(*serverRoutine).routine(0xc0007c0e40)
+	/Users/fritz/go/src/backend/pkg/search/server_routine.go:273 +0x9d8 fp=0xc003ec7fc8 sp=0xc003ec7dc8 pc=0x14c4798
+gravwell/pkg/search.(*serverRoutine).Start.gowrap1()
+	/Users/fritz/go/src/backend/pkg/search/server_routine.go:141 +0x25 fp=0xc003ec7fe0 sp=0xc003ec7fc8 pc=0x14c3c85
+runtime.goexit({})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/asm_amd64.s:1700 +0x1 fp=0xc003ec7fe8 sp=0xc003ec7fe0 pc=0x479701
+created by gravwell/pkg/search.(*serverRoutine).Start in goroutine 69
+	/Users/fritz/go/src/backend/pkg/search/server_routine.go:141 +0x69
+
+goroutine 52 gp=0xc000204700 m=nil [IO wait]:
+runtime.gopark(0x72d02f?, 0x16502e0?, 0x0?, 0x0?, 0xb?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:424 +0xce fp=0xc0000219d8 sp=0xc0000219b8 pc=0x47112e
+runtime.netpollblock(0x495298?, 0x407f66?, 0x0?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/netpoll.go:575 +0xf7 fp=0xc000021a10 sp=0xc0000219d8 pc=0x434df7
+internal/poll.runtime_pollWait(0x7fffb8afbb70, 0x72)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/netpoll.go:351 +0x85 fp=0xc000021a30 sp=0xc000021a10 pc=0x470425
+internal/poll.(*pollDesc).wait(0xc0036ac080?, 0xc0008ec000?, 0x0)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/internal/poll/fd_poll_runtime.go:84 +0x27 fp=0xc000021a58 sp=0xc000021a30 pc=0x516167
+internal/poll.(*pollDesc).waitRead(...)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/internal/poll/fd_poll_runtime.go:89
+internal/poll.(*FD).Read(0xc0036ac080, {0xc0008ec000, 0x1000, 0x1000})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/internal/poll/fd_unix.go:165 +0x27a fp=0xc000021af0 sp=0xc000021a58 pc=0x51745a
+net.(*netFD).Read(0xc0036ac080, {0xc0008ec000?, 0x45?, 0x1000?})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/net/fd_posix.go:55 +0x25 fp=0xc000021b38 sp=0xc000021af0 pc=0x654425
+net.(*conn).Read(0xc000dae0d0, {0xc0008ec000?, 0x99?, 0x0?})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/net/net.go:189 +0x45 fp=0xc000021b80 sp=0xc000021b38 pc=0x6684a5
+net.(*TCPConn).Read(0xc0030fa180?, {0xc0008ec000?, 0x67eb45?, 0xc000dae0d0?})
+	<autogenerated>:1 +0x25 fp=0xc000021bb0 sp=0xc000021b80 pc=0x67e845
+bufio.(*Reader).Read(0xc000db20c0, {0xc00075a4b0, 0x1, 0xc0008ed000?})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/bufio/bufio.go:241 +0x197 fp=0xc000021be8 sp=0xc000021bb0 pc=0x57b017
+io.ReadAtLeast({0x1b3d7e0, 0xc000db20c0}, {0xc00075a4b0, 0x1, 0x9}, 0x1)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/io/io.go:335 +0x90 fp=0xc000021c30 sp=0xc000021be8 pc=0x4b2290
+io.ReadFull(...)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/io/io.go:354
+encoding/gob.decodeUintReader({0x1b3d7e0, 0xc000db20c0}, {0xc00075a4b0, 0x9, 0x9})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/encoding/gob/decode.go:116 +0x51 fp=0xc000021c88 sp=0xc000021c30 pc=0x71d531
+encoding/gob.(*Decoder).recvMessage(0xc000490240)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/encoding/gob/decoder.go:84 +0x33 fp=0xc000021cc0 sp=0xc000021c88 pc=0x726db3
+encoding/gob.(*Decoder).decodeTypeSequence(0xc000490240, 0x0)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/encoding/gob/decoder.go:150 +0x47 fp=0xc000021cf0 sp=0xc000021cc0 pc=0x727127
+encoding/gob.(*Decoder).DecodeValue(0xc000490240, {0x1558140?, 0xc000dac040?, 0x0?})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/encoding/gob/decoder.go:229 +0x168 fp=0xc000021d70 sp=0xc000021cf0 pc=0x727568
+encoding/gob.(*Decoder).Decode(0xc000490240, {0x1558140?, 0xc000dac040?})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/encoding/gob/decoder.go:206 +0x12f fp=0xc000021dc8 sp=0xc000021d70 pc=0x7273af
+gravwell/pkg/search/search_api.(*Netio).Decode(...)
+	/Users/fritz/go/src/backend/pkg/search/search_api/comms.go:350
+gravwell/pkg/search.(*serverRoutine).routine(0xc0036be0c0)
+	/Users/fritz/go/src/backend/pkg/search/server_routine.go:208 +0x579 fp=0xc000021fc8 sp=0xc000021dc8 pc=0x14c4339
+gravwell/pkg/search.(*serverRoutine).Start.gowrap1()
+	/Users/fritz/go/src/backend/pkg/search/server_routine.go:141 +0x25 fp=0xc000021fe0 sp=0xc000021fc8 pc=0x14c3c85
+runtime.goexit({})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/asm_amd64.s:1700 +0x1 fp=0xc000021fe8 sp=0xc000021fe0 pc=0x479701
+created by gravwell/pkg/search.(*serverRoutine).Start in goroutine 69
+	/Users/fritz/go/src/backend/pkg/search/server_routine.go:141 +0x69
+
+goroutine 163 gp=0xc000804c40 m=nil [IO wait, 2 minutes]:
+runtime.gopark(0x16fc2e0?, 0x7329fd?, 0x0?, 0x0?, 0xb?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:424 +0xce fp=0xc003a459d8 sp=0xc003a459b8 pc=0x47112e
+runtime.netpollblock(0x495298?, 0x407f66?, 0x0?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/netpoll.go:575 +0xf7 fp=0xc003a45a10 sp=0xc003a459d8 pc=0x434df7
+internal/poll.runtime_pollWait(0x7fffb8afba58, 0x72)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/netpoll.go:351 +0x85 fp=0xc003a45a30 sp=0xc003a45a10 pc=0x470425
+internal/poll.(*pollDesc).wait(0xc000671200?, 0xc003d3c000?, 0x0)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/internal/poll/fd_poll_runtime.go:84 +0x27 fp=0xc003a45a58 sp=0xc003a45a30 pc=0x516167
+internal/poll.(*pollDesc).waitRead(...)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/internal/poll/fd_poll_runtime.go:89
+internal/poll.(*FD).Read(0xc000671200, {0xc003d3c000, 0x1000, 0x1000})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/internal/poll/fd_unix.go:165 +0x27a fp=0xc003a45af0 sp=0xc003a45a58 pc=0x51745a
+net.(*netFD).Read(0xc000671200, {0xc003d3c000?, 0xc003d386c0?, 0xc003d184b8?})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/net/fd_posix.go:55 +0x25 fp=0xc003a45b38 sp=0xc003a45af0 pc=0x654425
+net.(*conn).Read(0xc003c26a78, {0xc003d3c000?, 0x0?, 0x2e?})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/net/net.go:189 +0x45 fp=0xc003a45b80 sp=0xc003a45b38 pc=0x6684a5
+net.(*TCPConn).Read(0x0?, {0xc003d3c000?, 0x0?, 0xc000671220?})
+	<autogenerated>:1 +0x25 fp=0xc003a45bb0 sp=0xc003a45b80 pc=0x67e845
+bufio.(*Reader).Read(0xc003d2e420, {0xc003d1bfc0, 0x1, 0xc00076bc48?})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/bufio/bufio.go:241 +0x197 fp=0xc003a45be8 sp=0xc003a45bb0 pc=0x57b017
+io.ReadAtLeast({0x1b3d7e0, 0xc003d2e420}, {0xc003d1bfc0, 0x1, 0x9}, 0x1)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/io/io.go:335 +0x90 fp=0xc003a45c30 sp=0xc003a45be8 pc=0x4b2290
+io.ReadFull(...)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/io/io.go:354
+encoding/gob.decodeUintReader({0x1b3d7e0, 0xc003d2e420}, {0xc003d1bfc0, 0x9, 0x9})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/encoding/gob/decode.go:116 +0x51 fp=0xc003a45c88 sp=0xc003a45c30 pc=0x71d531
+encoding/gob.(*Decoder).recvMessage(0xc003143290)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/encoding/gob/decoder.go:84 +0x33 fp=0xc003a45cc0 sp=0xc003a45c88 pc=0x726db3
+encoding/gob.(*Decoder).decodeTypeSequence(0xc003143290, 0x0)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/encoding/gob/decoder.go:150 +0x47 fp=0xc003a45cf0 sp=0xc003a45cc0 pc=0x727127
+encoding/gob.(*Decoder).DecodeValue(0xc003143290, {0x1558140?, 0xc003d2b180?, 0xc003dbe5a0?})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/encoding/gob/decoder.go:229 +0x168 fp=0xc003a45d70 sp=0xc003a45cf0 pc=0x727568
+encoding/gob.(*Decoder).Decode(0xc003143290, {0x1558140?, 0xc003d2b180?})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/encoding/gob/decoder.go:206 +0x12f fp=0xc003a45dc8 sp=0xc003a45d70 pc=0x7273af
+gravwell/pkg/search/search_api.(*Netio).Decode(...)
+	/Users/fritz/go/src/backend/pkg/search/search_api/comms.go:350
+gravwell/pkg/search.(*serverRoutine).routine(0xc003b90fc0)
+	/Users/fritz/go/src/backend/pkg/search/server_routine.go:208 +0x579 fp=0xc003a45fc8 sp=0xc003a45dc8 pc=0x14c4339
+gravwell/pkg/search.(*serverRoutine).Start.gowrap1()
+	/Users/fritz/go/src/backend/pkg/search/server_routine.go:141 +0x25 fp=0xc003a45fe0 sp=0xc003a45fc8 pc=0x14c3c85
+runtime.goexit({})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/asm_amd64.s:1700 +0x1 fp=0xc003a45fe8 sp=0xc003a45fe0 pc=0x479701
+created by gravwell/pkg/search.(*serverRoutine).Start in goroutine 69
+	/Users/fritz/go/src/backend/pkg/search/server_routine.go:141 +0x69
+
+goroutine 124 gp=0xc000704a80 m=nil [IO wait, 2 minutes]:
+runtime.gopark(0x16fc2e0?, 0x7329fd?, 0x0?, 0x0?, 0xb?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:424 +0xce fp=0xc003fb19d8 sp=0xc003fb19b8 pc=0x47112e
+runtime.netpollblock(0x495298?, 0x407f66?, 0x0?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/netpoll.go:575 +0xf7 fp=0xc003fb1a10 sp=0xc003fb19d8 pc=0x434df7
+internal/poll.runtime_pollWait(0x7fffb8afb4e0, 0x72)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/netpoll.go:351 +0x85 fp=0xc003fb1a30 sp=0xc003fb1a10 pc=0x470425
+internal/poll.(*pollDesc).wait(0xc0008a9880?, 0xc003aa1000?, 0x0)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/internal/poll/fd_poll_runtime.go:84 +0x27 fp=0xc003fb1a58 sp=0xc003fb1a30 pc=0x516167
+internal/poll.(*pollDesc).waitRead(...)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/internal/poll/fd_poll_runtime.go:89
+internal/poll.(*FD).Read(0xc0008a9880, {0xc003aa1000, 0x1000, 0x1000})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/internal/poll/fd_unix.go:165 +0x27a fp=0xc003fb1af0 sp=0xc003fb1a58 pc=0x51745a
+net.(*netFD).Read(0xc0008a9880, {0xc003aa1000?, 0xc003aa2340?, 0xc0008e5928?})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/net/fd_posix.go:55 +0x25 fp=0xc003fb1b38 sp=0xc003fb1af0 pc=0x654425
+net.(*conn).Read(0xc000fd8c30, {0xc003aa1000?, 0x0?, 0x2e?})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/net/net.go:189 +0x45 fp=0xc003fb1b80 sp=0xc003fb1b38 pc=0x6684a5
+net.(*TCPConn).Read(0x0?, {0xc003aa1000?, 0x0?, 0xc0008a98a0?})
+	<autogenerated>:1 +0x25 fp=0xc003fb1bb0 sp=0xc003fb1b80 pc=0x67e845
+bufio.(*Reader).Read(0xc003a87d40, {0xc003b0b2f0, 0x1, 0xc003ab1c48?})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/bufio/bufio.go:241 +0x197 fp=0xc003fb1be8 sp=0xc003fb1bb0 pc=0x57b017
+io.ReadAtLeast({0x1b3d7e0, 0xc003a87d40}, {0xc003b0b2f0, 0x1, 0x9}, 0x1)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/io/io.go:335 +0x90 fp=0xc003fb1c30 sp=0xc003fb1be8 pc=0x4b2290
+io.ReadFull(...)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/io/io.go:354
+encoding/gob.decodeUintReader({0x1b3d7e0, 0xc003a87d40}, {0xc003b0b2f0, 0x9, 0x9})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/encoding/gob/decode.go:116 +0x51 fp=0xc003fb1c88 sp=0xc003fb1c30 pc=0x71d531
+encoding/gob.(*Decoder).recvMessage(0xc0031427e0)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/encoding/gob/decoder.go:84 +0x33 fp=0xc003fb1cc0 sp=0xc003fb1c88 pc=0x726db3
+encoding/gob.(*Decoder).decodeTypeSequence(0xc0031427e0, 0x0)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/encoding/gob/decoder.go:150 +0x47 fp=0xc003fb1cf0 sp=0xc003fb1cc0 pc=0x727127
+encoding/gob.(*Decoder).DecodeValue(0xc0031427e0, {0x1558140?, 0xc003b813e0?, 0xc003a81f20?})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/encoding/gob/decoder.go:229 +0x168 fp=0xc003fb1d70 sp=0xc003fb1cf0 pc=0x727568
+encoding/gob.(*Decoder).Decode(0xc0031427e0, {0x1558140?, 0xc003b813e0?})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/encoding/gob/decoder.go:206 +0x12f fp=0xc003fb1dc8 sp=0xc003fb1d70 pc=0x7273af
+gravwell/pkg/search/search_api.(*Netio).Decode(...)
+	/Users/fritz/go/src/backend/pkg/search/search_api/comms.go:350
+gravwell/pkg/search.(*serverRoutine).routine(0xc0036bfa40)
+	/Users/fritz/go/src/backend/pkg/search/server_routine.go:208 +0x579 fp=0xc003fb1fc8 sp=0xc003fb1dc8 pc=0x14c4339
+gravwell/pkg/search.(*serverRoutine).Start.gowrap1()
+	/Users/fritz/go/src/backend/pkg/search/server_routine.go:141 +0x25 fp=0xc003fb1fe0 sp=0xc003fb1fc8 pc=0x14c3c85
+runtime.goexit({})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/asm_amd64.s:1700 +0x1 fp=0xc003fb1fe8 sp=0xc003fb1fe0 pc=0x479701
+created by gravwell/pkg/search.(*serverRoutine).Start in goroutine 69
+	/Users/fritz/go/src/backend/pkg/search/server_routine.go:141 +0x69
+
+goroutine 137 gp=0xc0007056c0 m=nil [IO wait, 2 minutes]:
+runtime.gopark(0x16fc2e0?, 0x7329fd?, 0x0?, 0x0?, 0xb?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:424 +0xce fp=0xc003fad9d8 sp=0xc003fad9b8 pc=0x47112e
+runtime.netpollblock(0x495298?, 0x407f66?, 0x0?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/netpoll.go:575 +0xf7 fp=0xc003fada10 sp=0xc003fad9d8 pc=0x434df7
+internal/poll.runtime_pollWait(0x7fffb8afb940, 0x72)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/netpoll.go:351 +0x85 fp=0xc003fada30 sp=0xc003fada10 pc=0x470425
+internal/poll.(*pollDesc).wait(0xc000979600?, 0xc003c52000?, 0x0)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/internal/poll/fd_poll_runtime.go:84 +0x27 fp=0xc003fada58 sp=0xc003fada30 pc=0x516167
+internal/poll.(*pollDesc).waitRead(...)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/internal/poll/fd_poll_runtime.go:89
+internal/poll.(*FD).Read(0xc000979600, {0xc003c52000, 0x1000, 0x1000})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/internal/poll/fd_unix.go:165 +0x27a fp=0xc003fadaf0 sp=0xc003fada58 pc=0x51745a
+net.(*netFD).Read(0xc000979600, {0xc003c52000?, 0xc003c3af00?, 0xc000a57ef8?})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/net/fd_posix.go:55 +0x25 fp=0xc003fadb38 sp=0xc003fadaf0 pc=0x654425
+net.(*conn).Read(0xc003b6e980, {0xc003c52000?, 0x0?, 0x2e?})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/net/net.go:189 +0x45 fp=0xc003fadb80 sp=0xc003fadb38 pc=0x6684a5
+net.(*TCPConn).Read(0x0?, {0xc003c52000?, 0x0?, 0xc000979620?})
+	<autogenerated>:1 +0x25 fp=0xc003fadbb0 sp=0xc003fadb80 pc=0x67e845
+bufio.(*Reader).Read(0xc003c36240, {0xc003c15e20, 0x1, 0xc003c63c48?})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/bufio/bufio.go:241 +0x197 fp=0xc003fadbe8 sp=0xc003fadbb0 pc=0x57b017
+io.ReadAtLeast({0x1b3d7e0, 0xc003c36240}, {0xc003c15e20, 0x1, 0x9}, 0x1)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/io/io.go:335 +0x90 fp=0xc003fadc30 sp=0xc003fadbe8 pc=0x4b2290
+io.ReadFull(...)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/io/io.go:354
+encoding/gob.decodeUintReader({0x1b3d7e0, 0xc003c36240}, {0xc003c15e20, 0x9, 0x9})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/encoding/gob/decode.go:116 +0x51 fp=0xc003fadc88 sp=0xc003fadc30 pc=0x71d531
+encoding/gob.(*Decoder).recvMessage(0xc00317d4d0)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/encoding/gob/decoder.go:84 +0x33 fp=0xc003fadcc0 sp=0xc003fadc88 pc=0x726db3
+encoding/gob.(*Decoder).decodeTypeSequence(0xc00317d4d0, 0x0)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/encoding/gob/decoder.go:150 +0x47 fp=0xc003fadcf0 sp=0xc003fadcc0 pc=0x727127
+encoding/gob.(*Decoder).DecodeValue(0xc00317d4d0, {0x1558140?, 0xc003c3e720?, 0xc003c33470?})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/encoding/gob/decoder.go:229 +0x168 fp=0xc003fadd70 sp=0xc003fadcf0 pc=0x727568
+encoding/gob.(*Decoder).Decode(0xc00317d4d0, {0x1558140?, 0xc003c3e720?})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/encoding/gob/decoder.go:206 +0x12f fp=0xc003faddc8 sp=0xc003fadd70 pc=0x7273af
+gravwell/pkg/search/search_api.(*Netio).Decode(...)
+	/Users/fritz/go/src/backend/pkg/search/search_api/comms.go:350
+gravwell/pkg/search.(*serverRoutine).routine(0xc003c3c180)
+	/Users/fritz/go/src/backend/pkg/search/server_routine.go:208 +0x579 fp=0xc003fadfc8 sp=0xc003faddc8 pc=0x14c4339
+gravwell/pkg/search.(*serverRoutine).Start.gowrap1()
+	/Users/fritz/go/src/backend/pkg/search/server_routine.go:141 +0x25 fp=0xc003fadfe0 sp=0xc003fadfc8 pc=0x14c3c85
+runtime.goexit({})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/asm_amd64.s:1700 +0x1 fp=0xc003fadfe8 sp=0xc003fadfe0 pc=0x479701
+created by gravwell/pkg/search.(*serverRoutine).Start in goroutine 69
+	/Users/fritz/go/src/backend/pkg/search/server_routine.go:141 +0x69
+
+goroutine 165 gp=0xc000885a40 m=nil [IO wait, 2 minutes]:
+runtime.gopark(0x16fc2e0?, 0x7329fd?, 0x0?, 0x0?, 0xb?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:424 +0xce fp=0xc003eb99d8 sp=0xc003eb99b8 pc=0x47112e
+runtime.netpollblock(0x495298?, 0x407f66?, 0x0?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/netpoll.go:575 +0xf7 fp=0xc003eb9a10 sp=0xc003eb99d8 pc=0x434df7
+internal/poll.runtime_pollWait(0x7fffb8afb710, 0x72)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/netpoll.go:351 +0x85 fp=0xc003eb9a30 sp=0xc003eb9a10 pc=0x470425
+internal/poll.(*pollDesc).wait(0xc000671780?, 0xc003d82000?, 0x0)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/internal/poll/fd_poll_runtime.go:84 +0x27 fp=0xc003eb9a58 sp=0xc003eb9a30 pc=0x516167
+internal/poll.(*pollDesc).waitRead(...)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/internal/poll/fd_poll_runtime.go:89
+internal/poll.(*FD).Read(0xc000671780, {0xc003d82000, 0x1000, 0x1000})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/internal/poll/fd_unix.go:165 +0x27a fp=0xc003eb9af0 sp=0xc003eb9a58 pc=0x51745a
+net.(*netFD).Read(0xc000671780, {0xc003d82000?, 0xc003d7a680?, 0xc003d05f08?})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/net/fd_posix.go:55 +0x25 fp=0xc003eb9b38 sp=0xc003eb9af0 pc=0x654425
+net.(*conn).Read(0xc003cfa188, {0xc003d82000?, 0x0?, 0x2e?})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/net/net.go:189 +0x45 fp=0xc003eb9b80 sp=0xc003eb9b38 pc=0x6684a5
+net.(*TCPConn).Read(0x0?, {0xc003d82000?, 0x0?, 0xc0006717a0?})
+	<autogenerated>:1 +0x25 fp=0xc003eb9bb0 sp=0xc003eb9b80 pc=0x67e845
+bufio.(*Reader).Read(0xc003d780c0, {0xc003d74360, 0x1, 0xc003c5fc48?})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/bufio/bufio.go:241 +0x197 fp=0xc003eb9be8 sp=0xc003eb9bb0 pc=0x57b017
+io.ReadAtLeast({0x1b3d7e0, 0xc003d780c0}, {0xc003d74360, 0x1, 0x9}, 0x1)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/io/io.go:335 +0x90 fp=0xc003eb9c30 sp=0xc003eb9be8 pc=0x4b2290
+io.ReadFull(...)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/io/io.go:354
+encoding/gob.decodeUintReader({0x1b3d7e0, 0xc003d780c0}, {0xc003d74360, 0x9, 0x9})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/encoding/gob/decode.go:116 +0x51 fp=0xc003eb9c88 sp=0xc003eb9c30 pc=0x71d531
+encoding/gob.(*Decoder).recvMessage(0xc003b8d8c0)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/encoding/gob/decoder.go:84 +0x33 fp=0xc003eb9cc0 sp=0xc003eb9c88 pc=0x726db3
+encoding/gob.(*Decoder).decodeTypeSequence(0xc003b8d8c0, 0x0)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/encoding/gob/decoder.go:150 +0x47 fp=0xc003eb9cf0 sp=0xc003eb9cc0 pc=0x727127
+encoding/gob.(*Decoder).DecodeValue(0xc003b8d8c0, {0x1558140?, 0xc003daf820?, 0xc003de0c30?})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/encoding/gob/decoder.go:229 +0x168 fp=0xc003eb9d70 sp=0xc003eb9cf0 pc=0x727568
+encoding/gob.(*Decoder).Decode(0xc003b8d8c0, {0x1558140?, 0xc003daf820?})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/encoding/gob/decoder.go:206 +0x12f fp=0xc003eb9dc8 sp=0xc003eb9d70 pc=0x7273af
+gravwell/pkg/search/search_api.(*Netio).Decode(...)
+	/Users/fritz/go/src/backend/pkg/search/search_api/comms.go:350
+gravwell/pkg/search.(*serverRoutine).routine(0xc003c3c540)
+	/Users/fritz/go/src/backend/pkg/search/server_routine.go:208 +0x579 fp=0xc003eb9fc8 sp=0xc003eb9dc8 pc=0x14c4339
+gravwell/pkg/search.(*serverRoutine).Start.gowrap1()
+	/Users/fritz/go/src/backend/pkg/search/server_routine.go:141 +0x25 fp=0xc003eb9fe0 sp=0xc003eb9fc8 pc=0x14c3c85
+runtime.goexit({})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/asm_amd64.s:1700 +0x1 fp=0xc003eb9fe8 sp=0xc003eb9fe0 pc=0x479701
+created by gravwell/pkg/search.(*serverRoutine).Start in goroutine 69
+	/Users/fritz/go/src/backend/pkg/search/server_routine.go:141 +0x69
+
+goroutine 145 gp=0xc000805340 m=nil [IO wait, 2 minutes]:
+runtime.gopark(0x16fc2e0?, 0x7329fd?, 0x0?, 0x0?, 0xb?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/proc.go:424 +0xce fp=0xc003fb39d8 sp=0xc003fb39b8 pc=0x47112e
+runtime.netpollblock(0x495298?, 0x407f66?, 0x0?)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/netpoll.go:575 +0xf7 fp=0xc003fb3a10 sp=0xc003fb39d8 pc=0x434df7
+internal/poll.runtime_pollWait(0x7fffb8afb5f8, 0x72)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/netpoll.go:351 +0x85 fp=0xc003fb3a30 sp=0xc003fb3a10 pc=0x470425
+internal/poll.(*pollDesc).wait(0xc000670a80?, 0xc003bda000?, 0x0)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/internal/poll/fd_poll_runtime.go:84 +0x27 fp=0xc003fb3a58 sp=0xc003fb3a30 pc=0x516167
+internal/poll.(*pollDesc).waitRead(...)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/internal/poll/fd_poll_runtime.go:89
+internal/poll.(*FD).Read(0xc000670a80, {0xc003bda000, 0x1000, 0x1000})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/internal/poll/fd_unix.go:165 +0x27a fp=0xc003fb3af0 sp=0xc003fb3a58 pc=0x51745a
+net.(*netFD).Read(0xc000670a80, {0xc003bda000?, 0xc003ac9a80?, 0xc000a574f8?})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/net/fd_posix.go:55 +0x25 fp=0xc003fb3b38 sp=0xc003fb3af0 pc=0x654425
+net.(*conn).Read(0xc000fd9228, {0xc003bda000?, 0x0?, 0x2e?})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/net/net.go:189 +0x45 fp=0xc003fb3b80 sp=0xc003fb3b38 pc=0x6684a5
+net.(*TCPConn).Read(0x0?, {0xc003bda000?, 0x0?, 0xc000670aa0?})
+	<autogenerated>:1 +0x25 fp=0xc003fb3bb0 sp=0xc003fb3b80 pc=0x67e845
+bufio.(*Reader).Read(0xc003ab7b60, {0xc003abdf70, 0x1, 0xc003aadc48?})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/bufio/bufio.go:241 +0x197 fp=0xc003fb3be8 sp=0xc003fb3bb0 pc=0x57b017
+io.ReadAtLeast({0x1b3d7e0, 0xc003ab7b60}, {0xc003abdf70, 0x1, 0x9}, 0x1)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/io/io.go:335 +0x90 fp=0xc003fb3c30 sp=0xc003fb3be8 pc=0x4b2290
+io.ReadFull(...)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/io/io.go:354
+encoding/gob.decodeUintReader({0x1b3d7e0, 0xc003ab7b60}, {0xc003abdf70, 0x9, 0x9})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/encoding/gob/decode.go:116 +0x51 fp=0xc003fb3c88 sp=0xc003fb3c30 pc=0x71d531
+encoding/gob.(*Decoder).recvMessage(0xc003b8c630)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/encoding/gob/decoder.go:84 +0x33 fp=0xc003fb3cc0 sp=0xc003fb3c88 pc=0x726db3
+encoding/gob.(*Decoder).decodeTypeSequence(0xc003b8c630, 0x0)
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/encoding/gob/decoder.go:150 +0x47 fp=0xc003fb3cf0 sp=0xc003fb3cc0 pc=0x727127
+encoding/gob.(*Decoder).DecodeValue(0xc003b8c630, {0x1558140?, 0xc003b54000?, 0xc003b5e270?})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/encoding/gob/decoder.go:229 +0x168 fp=0xc003fb3d70 sp=0xc003fb3cf0 pc=0x727568
+encoding/gob.(*Decoder).Decode(0xc003b8c630, {0x1558140?, 0xc003b54000?})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/encoding/gob/decoder.go:206 +0x12f fp=0xc003fb3dc8 sp=0xc003fb3d70 pc=0x7273af
+gravwell/pkg/search/search_api.(*Netio).Decode(...)
+	/Users/fritz/go/src/backend/pkg/search/search_api/comms.go:350
+gravwell/pkg/search.(*serverRoutine).routine(0xc003b903c0)
+	/Users/fritz/go/src/backend/pkg/search/server_routine.go:208 +0x579 fp=0xc003fb3fc8 sp=0xc003fb3dc8 pc=0x14c4339
+gravwell/pkg/search.(*serverRoutine).Start.gowrap1()
+	/Users/fritz/go/src/backend/pkg/search/server_routine.go:141 +0x25 fp=0xc003fb3fe0 sp=0xc003fb3fc8 pc=0x14c3c85
+runtime.goexit({})
+	/Users/fritz/go/pkg/mod/golang.org/toolchain@v0.0.1-go1.23.6.darwin-arm64/src/runtime/asm_amd64.s:1700 +0x1 fp=0xc003fb3fe8 sp=0xc003fb3fe0 pc=0x479701
+created by gravwell/pkg/search.(*serverRoutine).Start in goroutine 69
+	/Users/fritz/go/src/backend/pkg/search/server_routine.go:141 +0x69
+
+rax    0xca
+rbx    0x0
+rcx    0xffffffffffffffff
+rdx    0x0
+rdi    0x2962be0
+rsi    0x80
+rbp    0x7ffffffff8f0
+rsp    0x7ffffffff8a8
+r8     0x0
+r9     0x0
+r10    0x0
+r11    0x0
+r12    0x0
+r13    0x1
+r14    0x2960440
+r15    0x5
+rip    0x47b501
+rflags 0x286
+cs     0x33
+fs     0x0
+gs     0x296
+
