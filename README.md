@@ -16,5 +16,5 @@ go install github.com/djfritz/sn@latest
 
 ## Overview
 
-sn is a simple command that deduplicates goroutines in a [Go](https://golang.org) stacktrace, removes what are often unneeded pointers and register contents, and displays the stacktrace in a TUI. 
+`sn` is a simple command that deduplicates goroutines in a [Go](https://golang.org) stacktrace, removes what are often unneeded pointers and register contents, and displays the stacktrace in a TUI. 
 
