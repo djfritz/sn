@@ -15,6 +15,7 @@ var (
 	S        *stack.Stack
 	H        = 10
 	delegate list.DefaultDelegate
+	items    []list.Item
 )
 
 var (
@@ -50,9 +51,6 @@ func newModel() model {
 	var (
 		delegateKeys = newDelegateKeyMap()
 	)
-
-	// Make initial list of items
-	var items []list.Item
 
 	for _, v := range S.R {
 		items = append(items, &item{
