@@ -1,3 +1,5 @@
+[![Go Reference](https://pkg.go.dev/badge/github.com/djfritz/sn.svg)](https://pkg.go.dev/github.com/djfritz/sn) 
+
 # Stack Noise
 
 sn (stack noise) -- Make your Go stack traces more readable
