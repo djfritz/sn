@@ -1,9 +1,9 @@
 # vhs script for generating demo.gif
 
 Output demo.gif
-Set FontSize 10
-Set Width 600
-Set Height 600
+Set FontSize 22
+Set Width 1200
+Set Height 1200
 
 Set TypingSpeed 250ms
 
