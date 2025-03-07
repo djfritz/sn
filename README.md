@@ -2,7 +2,7 @@
 
 sn (stack noise) -- Make your Go stack traces more readable
 
-<img alt="Demo" src="https://stuff.charm.sh/vhs/examples/neofetch_3.gif" width="600" />
+<img alt="Demo" src="https://github.com/djfritz/sn/blob/main/demo.gif?raw=true" width="600" />
 
 ## Installing
 
