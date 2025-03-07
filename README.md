@@ -2,7 +2,8 @@
 
 sn (stack noise) -- Make your Go stack traces more readable
 
-[demo.gif]
+![demo](https://github.com/djfritz/sn/blob/main/demo.gif?raw=true)
+
 
 ## Overview
 
