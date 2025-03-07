@@ -1,6 +1,6 @@
 module github.com/djfritz/sn
 
-go 1.24.0
+go 1.23.0
 
 require (
 	github.com/charmbracelet/bubbles v0.20.0
