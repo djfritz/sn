@@ -143,11 +143,11 @@ var fOut = flag.Bool("o", false, "print to standard out and exit instead of laun
 func main() {
 	flag.Parse()
 
-	if len(os.Args) != 2 {
+	if len(flag.Args()) != 1 {
 		log.Fatal("invalid arguments: expected filename")
 	}
 
-	f, err := os.Open(os.Args[1])
+	f, err := os.Open(flag.Arg(0))
 	if err != nil {
 		log.Fatal("opening file:", err)
 	}
