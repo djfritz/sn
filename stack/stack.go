@@ -68,7 +68,7 @@ func stateEntry(s *bufio.Scanner) (*Routine, error) {
 
 	for s.Scan() {
 		// goroutine DDDD [state]:
-		re := regexp.MustCompile(`goroutine (\d+) [^\[]?\[([^\[]+)\]:`)
+		re := regexp.MustCompile(`goroutine (\d+) [^\[]*\[([^\[]+)\]:`)
 		m := re.FindStringSubmatch(s.Text())
 		if m == nil {
 			continue

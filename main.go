@@ -5,6 +5,8 @@
 package main
 
 import (
+	"flag"
+	"fmt"
 	"log"
 	"os"
 	"strings"
@@ -136,7 +138,11 @@ func (m model) View() string {
 	return appStyle.Render(m.list.View())
 }
 
+var fOut = flag.Bool("o", false, "print to standard out and exit instead of launching the interactive browser")
+
 func main() {
+	flag.Parse()
+
 	if len(os.Args) != 2 {
 		log.Fatal("invalid arguments: expected filename")
 	}
@@ -151,7 +157,11 @@ func main() {
 		log.Fatal("decoding stacktrace:", err)
 	}
 
-	if _, err := tea.NewProgram(newModel(), tea.WithAltScreen()).Run(); err != nil {
-		log.Fatal("Error running program:", err)
+	if *fOut {
+		fmt.Println(S.String())
+	} else {
+		if _, err := tea.NewProgram(newModel(), tea.WithAltScreen()).Run(); err != nil {
+			log.Fatal("Error running program:", err)
+		}
 	}
 }
